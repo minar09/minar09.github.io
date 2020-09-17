@@ -109,16 +109,16 @@
 
 
   
-        <title>C3DVTON</title>
-        <meta property="og:title" content="C3DVTON">
+        <title>CloTH-VTON</title>
+        <meta property="og:title" content="CloTH-VTON">
         <meta property="og:image" content="keyresult.png">
-		<meta property="og:description" content="MR. Minar, TT. Tuan, H. Ahn, P. Rosin, Y. Lai. CVPRW 2020.">
+		<meta property="og:description" content="MR. Minar, H. Ahn. ACCV 2020.">
   </head>
 
   <body>
     <br>
     <center>
-    <span style="font-size:42px">3D Reconstruction of Clothes using a Human Body Model and its Application to Image-based Virtual Try-On</span>
+    <span style="font-size:42px">CloTH-VTON: Clothing Three-dimensional reconstruction for Hybrid image-based Virtual Try-ON</span>
     </center>
 
     <br><br>
@@ -126,27 +126,12 @@
        <tbody><tr>
         <td align="center" width="100px">
         <center>
-        <span style="font-size:20px"><a href="https://minar09.github.io/">Matiur Rahman Minar</a><sup>1</sup></span>
+        <span style="font-size:20px"><a href="https://minar09.github.io/">Matiur Rahman Minar</a></span>
         </center>
         </td>
         <td align="center" width="100px">
         <center>
-        <span style="font-size:20px"><a href="https://github.com/thaithanhtuan">Thai Thanh Tuan</a><sup>1</sup></span>
-        </center>
-        </td>
-        <td align="center" width="100px">
-        <center>
-        <span style="font-size:20px"><a href="https://square.seoultech.ac.kr/~icom/professor.html">Heejune Ahn</a><sup>1</sup></span>
-        </center>
-        </td>
-        <td align="center" width="100px">
-        <center>
-        <span style="font-size:20px"><a href="http://users.cs.cf.ac.uk/Paul.Rosin/">Paul Rosin</a><sup>2</sup></span>
-        </center>
-        </td>
-        <td align="center" width="100px">
-        <center>
-        <span style="font-size:20px"><a href="https://users.cs.cf.ac.uk/Yukun.Lai/">Yu-Kun Lai</a><sup>2</sup></span>
+        <span style="font-size:20px"><a href="https://square.seoultech.ac.kr/~icom/professor.html">Heejune Ahn</a></span>
         </center>
         </td>
         
@@ -158,15 +143,10 @@
        <tbody><tr>
         <td align="center" width="200px">
         <center>
-          <span style="font-size:20px"><sup>1</sup>Seoul National University of Science and Technology</span>
+          <span style="font-size:20px">Seoul National University of Science and Technology</span>
         </center>
         </td>
-          <td align="center" width="200px">
-        <center>
-          <span style="font-size:20px"><sup>2</sup>Cardiff University</span>
-        </center>
-        </td>
-     </tr>
+       </tr>
     </tbody></table>
     
     <br>
@@ -174,10 +154,10 @@
        <tbody><tr>
         <td align="center" width="100px">
         <center>
-          <span style="font-size:20px; color:red;">CVPRW 2020</span>
+          <span style="font-size:20px; color:red;">ACCV 2020</span>
         </center>
 		<center>
-          <span style="font-size:20px">3rd Workshop on Computer Vision for Fashion, Art and Design</span>
+          <span style="font-size:20px">Asian Conference on Computer Vision</span>
         </center>
         </td>
      </tr>
@@ -186,12 +166,7 @@
     <br>
       <table align="center" width="600px">
        <tbody><tr>
-        <td align="center" width="100px">
-			<center>
-			<span style="font-size:20px"><a href="https://sites.google.com/view/cvcreative2020/program/paper-5-3d-reconstruction-of-clothes-using-a-human-body-model">[workshop]</a></span>
-			</center>
-        </td>
-		<td align="center" width="100px">
+		<!--td align="center" width="100px">
 			<center>
 			<span style="font-size:20px"><a href="cvprw20_3d.pdf">[pdf]</a></span>
 			</center>
@@ -205,7 +180,7 @@
         <center>
         <span style="font-size:20px"><a href="cvprw20_3d_slide.pdf">[slide]</a></span>
         </center>
-        </td>
+        </td-->
         <td align="center" width="100px">
         <center>
         <span style="font-size:20px"><a href="bibtex.txt">[bibtex]</a></span>
@@ -229,31 +204,39 @@
                 <tbody><tr>
                     <td width="00px">
                       <center>
-                          <a href="keyresult.png">
+                          <!--a href="keyresult.png">
 							<img src="keyresult.png">
-						  </a><br>
+						  </a><br-->
                     </center>
                     </td>
                 </tr>
                     <tr><td width="600px">
                       <center>
-                          <span style="font-size:14px"><i>We proposed a novel hybrid method for 3D clothing reconstruction and applying it to image-based virtual try-on (VTON) for fashion clothing, which generates realistically deformed try-on results.</i>
+                          <span style="font-size:14px"><i>We proposed a novel hybrid and fully automatic method for 3D clothing reconstruction from single image and applying it to image-based virtual try-on (VTON) for fashion clothing, which generates realistically deformed try-on results with the highest possible quality.</i>
                     </span></center>
                     </td>
                 </tr>
             </tbody></table>
 
             <br>
-            Image-based virtual try-on (VTON) approaches are getting attention since they do not require 3D modeling. However, 2D cloth warping algorithms cannot cover 3D spatial
-			transformations for diverse target human poses. To solve
-			this problem, we propose a 2D and 3D hybrid method. First,
-			a 3D clothing mesh is reconstructed leveraging a 3D human body model in a rest pose. Due to the correspondence,
-			resulting 3D clothing models can be easily transferred to
-			the target human models with different poses and shapes
-			estimated from 2D images. Finally, the deformed clothing models can be rendered and blended with target human
-			representations. Experimental results with an open dataset
-			show that shapes of reconstructed clothing are more natural, compared to the 2D image-based deformation results,
-			when human poses and shapes are estimated accurately.
+            Virtual clothing try-on, transferring a clothing image onto a
+			target person image, is drawing industrial and research attention. Both
+			2D image-based and 3D model-based methods proposed recently have
+			their benefits and limitations. Whereas 3D model-based methods provide
+			realistic deformations of the clothing, it needs a difficult 3D model 
+			construction process and cannot handle the non-clothing areas well. 
+			Image-based deep neural network methods are good at generating disclosed 
+			human parts, retaining the unchanged area, and blending image parts, but
+			cannot handle large deformation of clothing. In this paper, we propose
+			CloTH-VTON that utilizes the high-quality image synthesis of 2D image-based 
+			techniques and the 3D deformation of the model-based techniques
+			to the target human pose. For this 2D and 3D method combination, we
+			propose a novel 3D cloth reconstruction method from a single 2D cloth
+			image, leveraging a 3D human body model, and transfer to the shape and
+			pose of the target person. Our cloth reconstruction method can be easily
+			applied to diverse cloth categories. Our method produces final try-on
+			output with naturally deformed clothing and preserving details in high
+			resolution. We present results with qualitative and quantitative analyses.
         
 		<br><br>
         <hr>
@@ -262,9 +245,9 @@
 	
 	
 		<center><h1>Video</h1></center>
-		<center>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/Mk9mQ-m5pOc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		</center>
+		<!--center>
+			<iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</center-->
 		
 		
 		
@@ -274,11 +257,11 @@
         <br><br>
 	
 		<center><h1>Visual flow</h1></center>
-		<center>
+		<!--center>
 			<a href="visualflow.png">
 				<img src="visualflow.png">
 		    </a><br>
-		</center>
+		</center-->
 		
 		
 		<br><br>
@@ -287,11 +270,11 @@
         <br><br>
 	
 		<center><h1>Results</h1></center>
-		<center>
+		<!--center>
 			<a href="qualitative.png">
 				<img src="qualitative.png">
 		    </a><br>
-		</center>
+		</center-->
 
 		
 		
@@ -307,16 +290,15 @@
 							<center><h1>Citation</h1></center>
 							<code>
 							
-							Matiur Rahman Minar, Thai Thanh Tuan, Heejune Ahn, Paul Rosin, and Yu-Kun Lai. "3D Reconstruction of Clothes using a Human Body Model and its Application to Image-based Virtual Try-On." In: CVPR Workshop on Computer Vision for Fashion, Art and Design (CVPRW), 2020.
+							Matiur Rahman Minar and Heejune Ahn "CloTH-VTON: Clothing Three-dimensional reconstruction for Hybrid image-based Virtual Try-ON." In: Asian Conference on Computer Vision (ACCV), 2020.
 					
 							<br><br>
 							
-							@InProceedings{Minar_C3DVTON_2020_CVPR_Workshops,
+							@InProceedings{Minar_CLOTHVTON_2020_ACCV,
 							
-							<br>&nbsp;&nbsp;&nbsp;	title={3D Reconstruction of Clothes using a Human Body Model and its Application to Image-based Virtual Try-On},
-							<br>&nbsp;&nbsp;&nbsp;	author={Minar, Matiur Rahman and Thai Thanh Tuan and Ahn, Heejune and Rosin, Paul and Lai, Yu-Kun},
-							<br>&nbsp;&nbsp;&nbsp;	booktitle = {The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
-							<br>&nbsp;&nbsp;&nbsp;	month = {June},
+							<br>&nbsp;&nbsp;&nbsp;	title={CloTH-VTON: Clothing Three-dimensional reconstruction for Hybrid image-based Virtual Try-ON},
+							<br>&nbsp;&nbsp;&nbsp;	author={Minar, Matiur Rahman and Ahn, Heejune},
+							<br>&nbsp;&nbsp;&nbsp;	booktitle = {Asian Conference on Computer Vision (ACCV)},
 							<br>&nbsp;&nbsp;&nbsp;	year={2020}
 							<br>}
 							</code>

@@ -1,0 +1,6 @@
+@InProceedings{Minar_CLOTHVTON_2020_ACCV,
+	title={CloTH-VTON: Clothing Three-dimensional reconstruction for Hybrid image-based Virtual Try-ON},
+	author={Minar, Matiur Rahman and Ahn, Heejune},
+	booktitle = {Asian Conference on Computer Vision (ACCV)},
+	year = {2020}
+}
