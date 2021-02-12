@@ -1,0 +1,6 @@
+@article{Minar_2021_Access,
+    author    = {Minar, Matiur Rahman and Thai, Thanh Tuan and Ahn, Heejune},
+    title     = {CloTH-VTON+: Clothing Three-dimensional reconstruction for Hybrid image-based Virtual Try-ON},
+    journal={IEEE Access},
+    year      = {2021}
+}
