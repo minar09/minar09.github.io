@@ -1,6 +1,13 @@
-@article{Minar_2021_Access,
-    author    = {Minar, Matiur Rahman and Thai, Thanh Tuan and Ahn, Heejune},
-    title     = {CloTH-VTON+: Clothing Three-dimensional reconstruction for Hybrid image-based Virtual Try-ON},
-    journal={IEEE Access},
-    year      = {2021}
-}
+@ARTICLE{9354778,
+  author={M. R. {Minar} and T. T. {Tuan} and H. {Ahn}},
+  journal={IEEE Access}, 
+  title={CloTH-VTON+: Clothing Three-dimensional reconstruction for Hybrid image-based Virtual Try-ON}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={1-1},
+  abstract={Image-based virtual try-on (VTON) systems based on deep learning have attracted research and commercial interests. Although they show their strengths in blending the person and try-on clothing image and synthesizing the dis-occluded regions, their results for complex-posed persons are often unsatisfactory due to the limitations in their geometry deformation and texture-preserving capacity. To address these challenges, we propose CloTH-VTON+ for seamlessly integrating the image-based deep learning methods and the strength of the 3D model in shape deformation. Specifically, a fully automatic pipeline is developed for 3D clothing model reconstruction and deformation using a reference human model: first, the try-on clothing is matched to the target clothing regions in the simple shaped reference human model, and then the 3D clothing model is reconstructed. The reconstructed 3D clothing model can generate a very natural pose and shape transfer, retaining the textures of clothes. A clothing refinement network further refines the alignment, eliminating the misalignment due to the errors in human pose estimation and 3D deformation. The deformed clothing images are combined utilizing conditional generative networks to in-paint the dis-occluded areas and blend them all. Experiments on an existing benchmark dataset demonstrate that CloTH-VTON+ generates higher quality results in comparison to the state-of-the-art VTON systems and CloTH-VTON. CloTH-VTON+ can be incorporated into extended applications such as multi-pose guided and Video VTON.},
+  keywords={Clothing;Three-dimensional displays;Strain;Two dimensional displays;Solid modeling;Shape;Image reconstruction;Online Fashion;Virtual try-on;Hybrid approach;3D clothing reconstruction;Generative network model},
+  doi={10.1109/ACCESS.2021.3059701},
+  ISSN={2169-3536},
+  month={},}
