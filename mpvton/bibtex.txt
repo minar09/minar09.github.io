@@ -1,9 +1,0 @@
-@ARTICLE{9512041,  
-author={Tuan, Thai Thanh and Minar, Matiur Rahman and Ahn, Heejune and Wainwright, John},  
-journal={IEEE Access},   
-title={Multiple Pose Virtual Try-On Based on 3D Clothing Reconstruction},   
-year={2021},  
-volume={9},  
-number={},  
-pages={114367-114380},  
-doi={10.1109/ACCESS.2021.3104274}}
