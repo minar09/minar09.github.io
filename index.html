@@ -5,41 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matiur Rahman Minar - ML Engineer & AI Researcher</title>
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="fonts/css2.css" rel="stylesheet">
+    <link href="fonts/fa.ttf" rel="stylesheet">
 </head>
 <body>
     <button class="sidebar-toggle" aria-label="Toggle Navigation">
-        <i class="fas fa-bars"></i>
+        <i class="fa fa-bars"></i>
     </button>
-
     <aside class="sidebar">
         <div class="sidebar-content">
             <img src="images/minar.png" alt="Matiur Rahman Minar" class="profile-pic">
-            <h2 style="text-align: center; margin-bottom: 1rem;">Matiur Rahman</h2>
+            <h2 style="text-align: center; margin-bottom: 1rem;">Matiur Rahman Minar</h2>
             <nav>
                 <ul class="sidebar-nav">
-                    <li><a href="#summary" data-section="summary"><i class="fas fa-user"></i> Profile Summary</a></li>
-                    <li><a href="#experience" data-section="experience"><i class="fas fa-briefcase"></i> Professional Experience</a></li>
-                    <li><a href="#skills" data-section="skills"><i class="fas fa-tools"></i> Skills</a></li>
-                    <li><a href="#publications" data-section="publications"><i class="fas fa-book-open"></i> Publications</a></li>
-                    <li><a href="#education" data-section="education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li><a href="#summary" data-section="summary"><i class="fa fa-user"></i> Profile Summary</a></li>
+                    <li><a href="#experience" data-section="experience"><i class="fa fa-briefcase"></i> Professional Experience</a></li>
+                    <li><a href="#skills" data-section="skills"><i class="fa fa-tools"></i> Skills</a></li>
+                    <li><a href="#publications" data-section="publications"><i class="fa fa-book-open"></i> Publications</a></li>
+                    <li><a href="#education" data-section="education"><i class="fa fa-graduation-cap"></i> Education</a></li>
                 </ul>
             </nav>
             <div class="contact-info" style="flex-direction: column; align-items: center; margin-top: 2rem;">
-                <a href="mailto:minar09.bd@gmail.com"><i class="fas fa-envelope"></i> minar09.bd@gmail.com</a>
-                <a href="https://linktr.ee/minar09" target="_blank"><i class="fas fa-link"></i> Portfolios</a>
+                <a href="mailto:minar09.bd@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/minar09" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://linktr.ee/minar09" target="_blank"><i class="fab fa-linktree"></i> LinkTree</a>
             </div>
         </div>
     </aside>
-
     <main class="main-content">
         <div class="container">
             <section id="summary" class="section">
                 <h2>Profile Summary</h2>
-                <p>Senior Machine Learning Engineer and AI Researcher with 5+ years of deep experience specializing in Computer Vision, Deep Learning, LLMs, and 3D Vision, along with prior strong experience in software engineering and development. Led multiple production deployments in international markets, with expertise in PyTorch and TensorFlow. Published multiple research works at top computer vision conferences and journals (CVPRW, ACCV, IEEE Access).</p>
+                <p>Senior Machine Learning Engineer and AI Researcher with 5+ years of experience strongly specializing in Computer Vision, Deep Learning, LLMs, and 3D Vision, along with prior robust expertise in software engineering and development. Led multiple production deployments in international markets, with expertise in PyTorch and TensorFlow. Published research at top computer vision conferences (CVPRW, ACCV). Proficient in English and Arabic languages.</p>
             </section>
-
             <section id="experience" class="section">
                 <h2>Professional Experience</h2>
                 <div class="job">
@@ -51,7 +51,6 @@
                     <p>Developed novel deep learning models for drug discovery, achieving 85% prediction accuracy. Architected ML pipeline processing 100M+ molecular structures, identifying 1000+ potential drug candidates.</p>
                 </div>
             </section>
-
             <section id="skills" class="section">
                 <h2>Skills</h2>
                 <div class="skills-grid">
@@ -84,16 +83,24 @@
                     </div>
                 </div>
             </section>
-
             <section id="publications" class="section publications">
                 <h2>Selected Publications</h2>
-                <ul>
-                    <li>"Multiple Pose Virtual Try-On Based on 3D Clothing Reconstruction" - IEEE Access, 2021</li>
-                    <li>"CloTH-VTON+: Clothing Three-dimensional reconstruction for Hybrid image-based Virtual Try-ON" - IEEE Access, 2021</li>
-                    <li>"3D Reconstruction of Clothes using a Human Body Model" - CVPR Workshop, 2020</li>
-                </ul>
+                <div class="publication-card">
+                    <h4>Multiple Pose Virtual Try-On Based on 3D Clothing Reconstruction</h4>
+                    <p><em>IEEE Access, 2021</em></p>
+                    <!--a href="URL_TO_ARTICLE" target="_blank">Read More</a-->
+                </div>
+                <div class="publication-card">
+                    <h4>CloTH-VTON+: Clothing Three-dimensional reconstruction for Hybrid image-based Virtual Try-ON</h4>
+                    <p><em>IEEE Access, 2021</em></p>
+                    <!--a href="URL_TO_ARTICLE" target="_blank">Read More</a-->
+                </div>
+                <div class="publication-card">
+                    <h4>3D Reconstruction of Clothes using a Human Body Model</h4>
+                    <p><em>CVPR Workshop, 2020</em></p>
+                    <!--a href="URL_TO_ARTICLE" target="_blank">Read More</a-->
+                </div>
             </section>
-
             <section id="education" class="section">
                 <h2>Education</h2>
                 <div class="job">
@@ -106,10 +113,18 @@
                     <p>Bangladesh University of Engineering and Technology, 2010-2015</p>
                 </div>
             </section>
-            
+            <div class="cta">
+                <a href="files/resume.pdf" download class="btn">Download Resume</a>
+            </div>
         </div>
     </main>
+    <script>
+        const sidebarToggle = document.querySelector('.sidebar-toggle');
+        const sidebar = document.querySelector('.sidebar');
 
-    <script src="js/main.js"></script>
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

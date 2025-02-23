@@ -1,36 +1,26 @@
 // Sidebar toggle for mobile
-        const sidebarToggle = document.querySelector('.sidebar-toggle');
-        const sidebar = document.querySelector('.sidebar');
-        const mainContent = document.querySelector('.main-content');
+const sidebarToggle = document.querySelector('.sidebar-toggle');
+const sidebar = document.querySelector('.sidebar');
 
-        sidebarToggle.addEventListener('click', () => {
-            sidebar.style.transform = sidebar.style.transform === 'translateX(0%)' 
-                ? 'translateX(-100%)' 
-                : 'translateX(0%)';
+sidebarToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('open'); // Use a CSS class to handle the open/close state
+});
+
+// Smooth scrolling for navigation using event delegation
+document.querySelector('.sidebar-nav').addEventListener('click', (e) => {
+    const target = e.target.closest('a'); // Find the closest anchor tag
+    if (target) {
+        e.preventDefault();
+        const sectionId = target.getAttribute('href').substring(1); // Get the section ID
+        document.getElementById(sectionId).scrollIntoView({
+            behavior: 'smooth'
         });
 
-        // Smooth scrolling for navigation
-        document.querySelectorAll('.sidebar-nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const sectionId = this.getAttribute('href').substring(1);
-                document.getElementById(sectionId).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                
-                // Close sidebar on mobile after selection
-                if (window.innerWidth <= 1024) {
-                    sidebar.style.transform = 'translateX(-100%)';
-                }
-            });
-        });
+        // Close sidebar on mobile after selection
+        if (window.innerWidth <= 1024) {
+            sidebar.classList.remove('open'); // Close the sidebar by removing the 'open' class
+        }
+    }
+});
 
-        // Skill category hover effect
-        document.querySelectorAll('.skill-category').forEach(category => {
-            category.addEventListener('mouseenter', (e) => {
-                e.target.style.transform = 'scale(1.05)';
-            });
-            category.addEventListener('mouseleave', (e) => {
-                e.target.style.transform = 'scale(1)';
-            });
-        });
+// No need for JavaScript hover effects; handled in CSS
