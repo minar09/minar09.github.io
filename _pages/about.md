@@ -9,8 +9,8 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>R913, CVIP Lab</p>
-    <p>Sogang University</p>
+    <p>R913, CVIP Lab,</p>
+    <p>Sogang University,</p>
     <p>Seoul, Korea</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
@@ -34,4 +34,5 @@ Previously, I worked as a Deep Learning Engineer at [Alteredverse](https://www.a
 I completed my MS from [Seoul National University of Science and Technology (SeoulTech)](https://www.seoultech.ac.kr/), where I worked on computer vision and deep learning under the supervision of [Prof. Heejune Ahn](https://sites.google.com/site/ahnheejune/). I hold a BSc in CSE from [Bangladesh University of Engineering and Technology (BUET)](https://cse.buet.ac.bd/).
 
 I'm always open to collaborations and discussions about computer vision, deep learning, and AI research. Feel free to reach out!
+
 ---
