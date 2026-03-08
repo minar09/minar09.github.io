@@ -1,189 +1,348 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
+  name: Matiur Rahman Minar
+  label: PhD Student & AI Researcher
+  email: minar09.bd@gmail.com
+  location: Seoul, Republic of Korea
   image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+  summary: Computer Vision researcher with 6+ years of applied research experience in computer vision, 3D reconstruction, and geospatial AI. Published 5+ papers in top-tier venues (CVPRW, ACCV, IEEE Access), with industry expertise in E-commerce, healthcare AI, smart cities, and LLM. Currently pursuing PhD in Computer Science at Sogang University, focusing on computer vision, 3D reconstruction, GenAI, and Context-aware LLM agents.
 
   social_networks:
-    - network: X
-      username: AlbertEinstein
     - network: GitHub
-      username: example
+      username: minar09
     - network: LinkedIn
-      username: example
+      username: minar09
+    - network: X (Twitter)
+      username: minar09
+    - network: Google Scholar
+      username: eQX-7Q4AAAAJ
 
   address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
+    street: ""
+    city: Seoul
+    region: ""
+    postalCode: ""
+    countryCode: KR
 
   sections:
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
+      - institution: Sogang University
+        location: Seoul, Republic of Korea
+        url: https://cs.sogang.ac.kr/cs/index_new.html
+        area: Computer Science and Engineering
         studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
+        start_date: 2026
+        end_date: Present
         highlights:
-          - Description 1.
-          - Description 2.
+          - Graduate Research Assistant in Computer Vision and Image Processing Lab
+          - Advisor: Prof. Dr. Unsang Park
 
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
+      - institution: Seoul National University of Science and Technology (SeoulTech)
+        location: Seoul, Republic of Korea
+        url: https://www.seoultech.ac.kr/
+        area: Electrical and Information Engineering
+        studyType: MS
+        start_date: 2019
+        end_date: 2021
         highlights:
-          - Description 1.
-          - Description 2.
+          - Thesis: "A Study on 3D reconstruction from clothing image and application to Virtual Try-On"
+          - Advisor: Prof. Dr. Heejune Ahn
+          - Research Assistant at Multimedia Computing Lab
+
+      - institution: Bangladesh University of Engineering and Technology (BUET)
+        location: Dhaka, Bangladesh
+        url: https://cse.buet.ac.bd/
+        area: Computer Science and Engineering
+        studyType: BSc
+        start_date: 2010
+        end_date: 2015
+        highlights:
+          - Thesis: "Measurement of Vital Signs with Non-invasive and Wireless Sensing Technologies and Health Monitoring"
+          - Advisor: Prof. Dr. S. M. Farhad
 
     Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+      - company: Alteredverse Pte Ltd.
+        position: Deep Learning Engineer
+        location: Singapore (Remote)
+        url: https://www.alteredverse.net/
+        start_date: 2023-05
+        end_date: 2026-02
+        summary: Led R&D for geospatial AI pipelines (3D reconstruction, LLM integration) with direct applications to smart city planning and metaverse development.
         highlights:
-          - Relativity
-          - Description 2.
+          - Designed end-to-end 3D vision pipeline for urban geospatial data with 98% automation rate in digital twin creation
+          - Developed LLM-powered NPCs for virtual malls and crowdtale games, increasing engagement by 40%
+          - Led research in multi-view 3D textured mesh reconstruction
+          - Key projects: Geospatial AI, World of Malls, Crowdtale apps
 
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
+      - company: Robi Axiata Limited
+        position: Manager (New Core Planning)
+        location: Dhaka, Bangladesh
+        url: https://www.robi.com.bd/
+        start_date: 2022-05
+        end_date: 2023-04
+        summary: Led development of high-impact telecom solutions serving 53M+ users, achieving 99.99% system uptime and 40% faster transaction processing.
         highlights:
-          - Description 1.
-          - Description 2.
+          - Managed cross-functional teams delivering critical projects with 100% on-time completion
+          - Led multiple R&D projects from concept to completion
+          - Planned and designed business requirements, infrastructure, and capacity for high-revenue applications
 
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
+      - company: NetTargets Inc.
+        position: AI Engineer
+        location: Daejeon, Korea
+        url: https://www.net-targets.com/
+        start_date: 2021-02
+        end_date: 2022-04
+        summary: Designed graph ML models for drug discovery, reducing timelines by 60%.
         highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
+          - Developed novel deep learning models achieving 85% prediction accuracy
+          - Architected ML pipeline processing 100M+ molecular structures, identifying 1000+ drug candidates
+          - Implemented production-grade drug-drug interaction prediction system
+          - Key projects: DrugDiscovery AI, Protein Interaction Predictor
+
+      - company: Automation Solutionz Inc.
+        position: Framework Architect
+        location: Waterloo, Ontario, Canada (Remote)
+        url: https://www.zeuz.ai/
+        start_date: 2015-08
+        end_date: 2018-07
+        summary: Developed and maintained an industry-leading end-to-end automated testing framework.
+        highlights:
+          - Increased product quality by 45% through innovative testing solutions
+          - Reduced testing cycle time by 60% for multiple client projects
+          - Improved test coverage by 80% across implemented projects
+          - Key project: ZeuZ Framework
+
+    Research Experience:
+      - company: Seoul National University of Science and Technology (SeoulTech)
+        position: Research Assistant
+        location: Seoul, Republic of Korea
+        start_date: 2019-03
+        end_date: 2021-01
+        summary: Conducted advanced research in fashion-clothing virtual try-on technologies at Multimedia Computing Lab.
+        highlights:
+          - Published 3 peer-reviewed papers in top computer vision journals & conferences
+          - Developed state-of-the-art 3D clothing reconstruction and virtual try-on algorithms
+          - Research published at CVPRW 2020 led to 40% accuracy improvement adopted by Korean fashion e-commerce platforms
+
+      - company: Seoul National University of Science and Technology (SeoulTech)
+        position: Research Intern
+        location: Seoul, Republic of Korea
+        start_date: 2018-09
+        end_date: 2019-02
+        summary: Specialized in fashion-clothing segmentation and deep learning.
+        highlights:
+          - Gained hands-on experience in advanced computer vision techniques
+          - Contributed to cutting-edge research in virtual try-on technologies
+
+    Part-time & Contract Roles:
+      - company: Fashionade Inc.
+        position: Machine Learning Engineer (Part-time)
+        location: Seoul, Korea (Remote)
+        url: https://company.fashionade.ai/
+        start_date: 2022-08
+        end_date: 2022-12
+        summary: Developed cutting-edge fashion AI solutions using deep neural networks and computer vision.
+        highlights:
+          - Deployed production ML models for virtual try-on with 90% accuracy
+          - Implemented REST API-based model evaluation system for real-time fashion recommendation
+
+      - company: Asset Science LLC
+        position: Software Automation Tester (Contract)
+        location: Waterloo, Ontario, Canada (Remote)
+        url: https://assetscience.com/
+        start_date: 2015-12
+        end_date: 2017-01
+        summary: Designed and executed comprehensive test automation using Selenium and Appium.
+        highlights:
+          - Reduced manual testing efforts by 60% through automated test case implementation
+
+      - company: Automation Solutionz Inc.
+        position: Software Developer (Part-time)
+        location: Waterloo, Ontario, Canada (Remote)
+        url: https://www.zeuz.ai/
+        start_date: 2014-01
+        end_date: 2015-08
+        summary: Developed a scriptless test automation framework adopted as a top software testing platform.
+        highlights:
+          - Collaborated effectively with cross-functional teams to deliver projects on time and budget
 
     Awards:
-      - title: Nobel Prize in Physics
+      - title: 2nd Place Winner - LIP Challenge Track 3
         authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
+          - "CVPR 2020 Workshop"
+        date: 2020
+        awarder: Workshop on Towards Human-Centric Image/Video Synthesis
+        url: https://vuhcs.github.io/
+        summary: Image-based Multi-pose Virtual Try-on Challenge. Team: Thai Thanh Tuan, Matiur Rahman Minar, Heejune Ahn.
 
-      - title: Max Planck Medal
+      - title: Innovation Award 2024
         authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
+          - "Google Cloud"
+        date: 2024
+        awarder: Google Cloud AI Trailblazers 2.0 Challenge
+        url: ""
+        summary: Awarded to Alteredverse PTE Ltd. for innovative AI solutions.
+
+      - title: Q3 2022 Best Developer Award
+        authors:
+          - "Robi Axiata Limited"
+        date: 2022
+        awarder: Robi Axiata Limited
+        url: ""
+        summary: Recognition for outstanding development work in telecom solutions.
 
     Publications:
-      - title: Zur Elektrodynamik bewegter Körper
+      - title: "CloTH-VTON+: Clothing Three-dimensional reconstruction for Hybrid image-based Virtual Try-ON"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
+          - Matiur Rahman Minar
+          - Thai Thanh Tuan
+          - Heejune Ahn
+        publisher: IEEE Access
+        releaseDate: 2021
+        url: https://doi.org/10.1109/ACCESS.2021.3060120
+        summary: Extended work on 3D clothing reconstruction for virtual try-on applications.
 
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
+      - title: "Multiple Pose Virtual Try-On Based on 3D Clothing Reconstruction"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
+          - Thai Thanh Tuan
+          - Matiur Rahman Minar
+          - Heejune Ahn
+          - John Wainwright
+        publisher: IEEE Access
+        releaseDate: 2021
+        url: https://doi.org/10.1109/ACCESS.2021.3105349
+        summary: Novel approach to virtual try-on supporting multiple poses using 3D reconstruction.
 
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
+      - title: "CloTH-VTON: Clothing Three-dimensional reconstruction for Hybrid image-based Virtual Try-ON"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
+          - Matiur Rahman Minar
+          - Heejune Ahn
+        publisher: Asian Conference on Computer Vision (ACCV)
+        releaseDate: 2020
+        url: ""
+        summary: Conference paper on hybrid image-based virtual try-on using 3D clothing reconstruction.
+
+      - title: "3D Reconstruction of Clothes using a Human Body Model and its Application to Image-based Virtual Try-On"
+        authors:
+          - Matiur Rahman Minar
+          - Thai Thanh Tuan
+          - Heejune Ahn
+          - Paul Rosin
+          - Yu-Kun Lai
+        publisher: CVPR Workshop on Computer Vision for Fashion, Art and Design
+        releaseDate: 2020
+        url: ""
+        summary: Workshop paper on 3D clothes reconstruction and virtual try-on applications.
+
+      - title: "CP-VTON+: Clothing Shape and Texture Preserving Image-Based Virtual Try-On"
+        authors:
+          - Matiur Rahman Minar
+          - Thai Thanh Tuan
+          - Heejune Ahn
+          - Paul Rosin
+          - Yu-Kun Lai
+        publisher: CVPR Workshop on Computer Vision for Fashion, Art and Design
+        releaseDate: 2020
+        url: ""
+        summary: Improved virtual try-on method preserving clothing shape and texture.
 
     Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+      - name: Research Areas
+        level: ""
+        icon: fa-solid fa-brain
+        keywords: "Computer Vision, 3D Reconstruction, Generative AI, Virtual Try-On, Geospatial AI, Digital Twin, Healthcare ML, Deep Learning, LLM"
+
+      - name: Programming
+        level: ""
+        icon: fa-solid fa-code
+        keywords: "Python (Expert), JavaScript, C, C++, C#, MATLAB, Java, R, Julia"
+
+      - name: AI/ML Frameworks
+        level: ""
+        icon: fa-solid fa-robot
+        keywords: "PyTorch (Expert), TensorFlow (Expert), Keras, Graph ML"
+
+      - name: Large Language Models
+        level: ""
+        icon: fa-solid fa-language
+        keywords: "GPT, Gemini, LLAMA, DeepSeek, Qwen, InternVL"
+
+      - name: Agentic AI
+        level: ""
+        icon: fa-solid fa-network-wired
+        keywords: "Pydantic AI, OpenAI Agents, LangChain Agents, MCP Servers"
+
+      - name: 3D Vision & Graphics
+        level: ""
+        icon: fa-solid fa-cube
+        keywords: "Open3D (Expert), MeshLab, OpenDR, PyRender, Trimesh"
+
+      - name: Web Development
+        level: ""
+        icon: fa-solid fa-globe
+        keywords: "Flask, FastAPI, Django, React, Node.js, REST APIs"
+
+      - name: Databases
+        level: ""
+        icon: fa-solid fa-database
+        keywords: "PostgreSQL (Expert), MySQL, Neo4j, MongoDB"
+
+      - name: DevOps & Tools
+        level: ""
+        icon: fa-solid fa-server
+        keywords: "Git, DVC, Docker, AWS, GCP"
 
     Languages:
-      - name: German
+      - name: English
+        summary: "Professional/Fluent"
+
+      - name: Bangla
         summary: "Native speaker"
 
-      - name: English
-        summary: "Fluent"
-
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
+      - name: Arabic
+        summary: "Intermediate/Active Learner"
 
     Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
+      - name: GeoAI
+        summary: Led 3D vision R&D for geospatial AI converting LiDAR urban point clouds into 3D virtual cities.
         highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
+          - Technologies: TensorFlow, PyTorch, Open3D, GIS tools, Unreal Engine
+          - 98% automation rate in digital twin creation
+        start_date: 2023
+        end_date: 2026
+        url: https://www.alteredverse.net/
 
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+      - name: World of Malls
+        summary: Built and integrated custom LLM-powered NPCs for 3D virtual shopping malls and crowd-tale games.
+        highlights:
+          - Technologies: AI Agents, MCP Servers, Node.js, React, GCP, Vertex AI, NVIDIA NIM
+          - 40% increase in virtual mall engagement
+        start_date: 2023
+        end_date: 2026
+        url: https://www.worldofmalls.com/
 
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+      - name: StyleAI
+        summary: ML research and development for fashion-clothing-based virtual try-on and colorization.
+        highlights:
+          - Technologies: PyTorch, TensorFlow, OpenCV, Pillow
+          - 90% accuracy in production models
+        start_date: 2022
+        end_date: 2022
+        url: https://styleai.io/
+
+      - name: AI-powered Drug Discovery
+        summary: Production-level ML systems for drug discovery and repurposing.
+        highlights:
+          - Technologies: TensorFlow, Keras, PyTorch, Python, R, Julia, GCP
+          - 85% prediction accuracy, 60% reduction in discovery timeline
+        start_date: 2021
+        end_date: 2022
+        url: https://www.net-targets.com/
+
+      - name: Virtual Try-On
+        summary: State-of-the-art fashion clothing-based virtual try-on research at SeoulTech.
+        highlights:
+          - Technologies: PyTorch, OpenCV, Python, MATLAB, OpenDR
+          - Published 3 papers in top-tier venues (CVPRW, ACCV)
+        start_date: 2019
+        end_date: 2021
+        url: https://square.seoultech.ac.kr/~icom/lab_intro.html
