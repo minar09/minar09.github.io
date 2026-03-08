@@ -1,9 +1,9 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
+"IEEE Access":
+  url: https://ieeeaccess.ieee.org/
   color: "#00369f"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"ACCV":
+  url: https://accv2020.github.io/index.html
 
-"Vision":
+"CVPRW":
   color: "#009f36"
