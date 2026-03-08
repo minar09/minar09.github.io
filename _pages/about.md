@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+<!-- subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc. -->
 
 profile:
   align: right
@@ -31,7 +31,7 @@ I am currently a PhD student and Graduate Research Assistant in the [Computer Sc
 
 Previously, I worked as a Deep Learning Engineer at [Alteredverse](https://www.alteredverse.net/) and as an AI Engineer at [NetTargets](https://www.net-targets.com/), where I developed and deployed production-grade machine learning systems.
 
-I completed my MS from [Seoul National University of Science and Technology (SeoulTech)](https://www.seoultech.ac.kr/), where I worked on computer vision and deep learning under the supervision of [Prof. Heejune Ahn](https://sites.google.com/site/ahnheejune/). I hold a BSc in CSE from [Bangladesh University of Engineering and Technology (BUET)](https://cse.buet.ac.bd/).
+I completed my MS from [Seoul National University of Science and Technology (SeoulTech)](https://www.seoultech.ac.kr/), where I worked on computer vision and deep learning under the supervision of [Prof. Heejune Ahn](https://square.seoultech.ac.kr/~icom/). I hold a BSc in CSE from [Bangladesh University of Engineering and Technology (BUET)](https://cse.buet.ac.bd/).
 
 I'm always open to collaborations and discussions about computer vision, deep learning, and AI research. Feel free to reach out!
 
