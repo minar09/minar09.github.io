@@ -906,7 +906,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                 }
-            });
+            }
             
             // Get all speed control buttons
             const speedButtons = document.querySelectorAll('.speed-btn');
@@ -1085,7 +1085,7 @@ document.addEventListener('DOMContentLoaded', function() {
             window.pauseOtherSections = pauseOtherSections;
         });
 
-        function copyBibtex() {
+        window.copyBibtex = function() {
             const bibtexContent = document.getElementById('bibtex-content').textContent;
             navigator.clipboard.writeText(bibtexContent).then(() => {
                 const button = document.querySelector('.copy-button');
@@ -1099,13 +1099,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }).catch(err => {
                 console.error('Failed to copy: ', err);
             });
-        }
+        };
         
         // More Research dropdown toggle
-        function toggleResearchDropdown() {
+        window.toggleResearchDropdown = function() {
             const dropdown = document.querySelector('.more-research-dropdown');
             dropdown.classList.toggle('open');
-        }
+        };
         
         // Close dropdown when clicking outside
         document.addEventListener('click', function(event) {
@@ -1114,3 +1114,4 @@ document.addEventListener('DOMContentLoaded', function() {
                 dropdown.classList.remove('open');
             }
         });
+    });
