@@ -133,7 +133,18 @@
     
     <div class="container">
         <section class="section-container teaser-section" style="margin-top: 0;">
-            <h2 style="margin-top: 0.5rem;">Teaser</h2>
+            <h2 style="margin-top: 0.5rem; position: relative; text-align: center;">
+                Teaser
+                <div class="video-controls" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%);">
+                    <button class="control-btn restart-btn" data-action="restart" data-section="teaser" title="Restart">↻</button>
+                    <button class="control-btn play-btn" data-action="play" data-section="teaser" title="Play">▶</button>
+                    <button class="control-btn stop-btn" data-action="stop" data-section="teaser" title="Stop">⏹</button>
+                    <span class="control-separator">|</span>
+                    <button class="speed-btn" data-speed="1" data-section="teaser">1x</button>
+                    <button class="speed-btn" data-speed="2" data-section="teaser">2x</button>
+                    <button class="speed-btn" data-speed="4" data-section="teaser">4x</button>
+                </div>
+            </h2>
             <div class="divider"></div>
             <div class="section-description">
                 <p>Steady-Forcing is a dual-memory framework for fixed-camera nature-flow video generation. It balances stability and motion to sustain high background persistence and continuous fluid dynamics over multi-minute horizons.</p>
@@ -148,7 +159,7 @@
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                    <p class="video-description">A calm fixed-camera beach stream with steady background persistence.</p>
+                    <p class="video-description">A calm fixed-camera rainy street scene with steady background persistence.</p>
                 </div>
                 <div class="video-container compact-container">
                     <h3>Tranquil River Under Concrete Bridge</h3>
@@ -168,7 +179,7 @@
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                    <p class="video-description">A stormy forest stream that highlights fluid motion under fixed-camera conditions.</p>
+                    <p class="video-description">A stormy hillside forest scene that highlights fluid motion under fixed-camera conditions.</p>
                 </div>
                 <div class="video-container compact-container">
                     <h3>City Snow Scene</h3>
@@ -178,7 +189,7 @@
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                    <p class="video-description">A calm fixed-camera beach stream with steady background persistence.</p>
+                    <p class="video-description">A calm fixed-camera sea beach stream with steady background persistence.</p>
                 </div>
                 <div class="video-container compact-container">
                     <h3>Volcanic Valley Scene</h3>
@@ -188,7 +199,7 @@
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                    <p class="video-description">A serene river scene with sustained motion and background stability.</p>
+                    <p class="video-description">A lava flow from volcanic valley scene with sustained motion and background stability.</p>
                 </div>
                 <div class="video-container compact-container">
                     <h3>Night River Scene</h3>
@@ -198,7 +209,7 @@
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                    <p class="video-description">A stormy forest stream that highlights fluid motion under fixed-camera conditions.</p>
+                    <p class="video-description">A dangerous river scene at night that highlights fluid motion under fixed-camera conditions.</p>
                 </div>
             </div>
         </section>
@@ -231,7 +242,7 @@
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <p class="video-description">A calm 60-second beach stream with minimal motion and strong spatial persistence.</p>
+                        <p class="video-description">A calm 60-second sea beach stream with minimal motion and strong spatial persistence.</p>
                     </div>
                     <div class="video-container">
                         <h3>Mountain Stream Flow</h3>
@@ -241,7 +252,7 @@
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <p class="video-description">A 60-second rural stream showcasing continuous river motion under a fixed viewpoint.</p>
+                        <p class="video-description">A 60-second mountain stream showcasing continuous river motion under a fixed viewpoint.</p>
                     </div>
                 </div>
             </div>
@@ -286,14 +297,14 @@
                 <div class="duration-title">240-Second Evaluation</div>
                 <div class="video-row">
                     <div class="video-container">
-                        <h3>Massive Waterfall Plunge</h3>
+                        <h3>Long Deep Smoke Rising</h3>
                         <div class="video-wrapper">
                             <video controls loop muted playsinline preload="metadata">
                                 <source src="videos/steady_forcing/240s/A_dense_smoke_column_rising_from_a_controlled_burn_behind_a_low_brick_wall,_recorded_by_a_completely-0-1779947402.0578957.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <p class="video-description">A full 240-second fixed-camera waterfall sequence with continuous motion and solid spatial consistency.</p>
+                        <p class="video-description">A full 240-second fixed-camera smoke sequence with continuous motion and solid spatial consistency.</p>
                     </div>
                     <div class="video-container">
                         <h3>Serene Forest River Loop</h3>
@@ -306,14 +317,14 @@
                         <p class="video-description">A 240-second forest river with a consistent steady view and continuous water motion.</p>
                     </div>
                     <div class="video-container">
-                        <h3>Urban Rainstorm Continuous Flow</h3>
+                        <h3>Wide Open Ocean Waves</h3>
                         <div class="video-wrapper">
                             <video controls loop muted playsinline preload="metadata">
                                 <source src="videos/steady_forcing/240s/A_wide_open-ocean_scene_recorded_by_a_completely_fixed,_static,_tripod-mounted_camera_from_a_low_roc-0-1779941628.8578746.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <p class="video-description">A 240-second fixed-camera urban rainstorm sequence with persistent continuity.</p>
+                        <p class="video-description">A 240-second fixed-camera ocean wave sequence with persistent continuity.</p>
                     </div>
                 </div>
             </div>

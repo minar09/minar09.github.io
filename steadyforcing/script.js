@@ -24,11 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Set custom demo videos to 2x speed
+    // Set custom demo videos to 1x speed
     const customVideos = document.querySelector('.section-container');
     if (customVideos) {
         customVideos.querySelectorAll('video').forEach(video => {
-            video.playbackRate = 2.0;
+            video.playbackRate = 1.0;
         });
     }
     
@@ -615,8 +615,35 @@ document.addEventListener('DOMContentLoaded', function() {
             const action = this.getAttribute('data-action');
             const sectionType = this.getAttribute('data-section');
             
-            // Handle Motivations section
-            if (sectionType === 'motivations') {
+            // Handle Teaser section
+            if (sectionType === 'teaser') {
+                const teaserSection = document.querySelector('.teaser-section');
+                
+                if (teaserSection) {
+                    if (window.loadVideosInElement) {
+                        window.loadVideosInElement(teaserSection);
+                    }
+                    if (action === 'restart' || action === 'play') {
+                        if (window.pauseOtherSections) {
+                            window.pauseOtherSections(teaserSection);
+                        }
+                    }
+                    
+                    const videos = teaserSection.querySelectorAll('video');
+                    
+                    videos.forEach(video => {
+                        if (action === 'restart') {
+                            video.currentTime = 0;
+                            video.play();
+                        } else if (action === 'play') {
+                            video.play();
+                        } else if (action === 'stop') {
+                            video.pause();
+                        }
+                    });
+                }
+            }
+            else if (sectionType === 'motivations') {
                 const motivationsSection = Array.from(document.querySelectorAll('section')).find(section => {
                     const h2 = section.querySelector('h2');
                     return h2 && h2.textContent.includes('Motivations');
@@ -907,211 +934,220 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             }
+        });
+    });
+    
+    // Get all speed control buttons
+    const speedButtons = document.querySelectorAll('.speed-btn');
+    
+    speedButtons.forEach(speedBtn => {
+        speedBtn.addEventListener('click', function() {
+            const speed = parseFloat(this.getAttribute('data-speed'));
+            const sectionType = this.getAttribute('data-section');
             
-            // Get all speed control buttons
-            const speedButtons = document.querySelectorAll('.speed-btn');
-            
-            speedButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const speed = parseFloat(this.getAttribute('data-speed'));
-                    const sectionType = this.getAttribute('data-section');
-                    
-                    // Handle Motivations section
-                    if (sectionType === 'motivations') {
-                        const motivationsSection = Array.from(document.querySelectorAll('section')).find(section => {
-                            const h2 = section.querySelector('h2');
-                            return h2 && h2.textContent.includes('Motivations');
-                        });
-                        
-                        if (motivationsSection) {
-                            // Remove active class from all speed buttons in this section
-                            motivationsSection.querySelectorAll('.speed-btn').forEach(btn => {
-                                btn.classList.remove('active');
-                            });
-                            // Add active class to clicked button
-                            this.classList.add('active');
-                            
-                            // Get all videos in the section
-                            const videos = motivationsSection.querySelectorAll('video');
-                            videos.forEach(video => {
-                                video.playbackRate = speed;
-                            });
-                        }
-                    }
-                    // Handle Action Control Comparison section
-                    else if (sectionType === 'action-control-comparison') {
-                        const actionControlSection = Array.from(document.querySelectorAll('section.comparison-section')).find(section => {
-                            const h2 = section.querySelector('h2');
-                            return h2 && h2.textContent.includes('Action Control Comparison');
-                        });
-                        
-                        if (actionControlSection) {
-                            // Remove active class from all speed buttons in this section
-                            actionControlSection.querySelectorAll('.speed-btn').forEach(btn => {
-                                btn.classList.remove('active');
-                            });
-                            // Add active class to clicked button
-                            this.classList.add('active');
-                            
-                            // Get all videos in the section
-                            const videos = actionControlSection.querySelectorAll('video');
-                            videos.forEach(video => {
-                                video.playbackRate = speed;
-                            });
-                        }
-                    }
-                    // Handle Qualitative Comparison section
-                    else if (sectionType === 'qualitative-comparison') {
-                        const qualitativeSection = Array.from(document.querySelectorAll('section.comparison-section')).find(section => {
-                            const h2 = section.querySelector('h2');
-                            return h2 && h2.textContent.includes('Qualitative Comparison');
-                        });
-                        
-                        if (qualitativeSection) {
-                            qualitativeSection.querySelectorAll('.speed-btn').forEach(btn => {
-                                btn.classList.remove('active');
-                            });
-                            this.classList.add('active');
-                            
-                            const videos = qualitativeSection.querySelectorAll('video');
-                            videos.forEach(video => {
-                                video.playbackRate = speed;
-                            });
-                        }
-                    } else {
-                        // Handle regular subsections (qualitative-subsection, subsection, or ablation-subsection)
-                        const subsection = this.closest('.qualitative-subsection, .subsection, .ablation-subsection');
-                        if (subsection) {
-                            // Remove active class from all buttons in this subsection
-                            subsection.querySelectorAll('.speed-btn').forEach(btn => {
-                                btn.classList.remove('active');
-                            });
-                            // Add active class to clicked button
-                            this.classList.add('active');
-                            
-                            // Get all videos in this subsection
-                            const videos = subsection.querySelectorAll('video');
-                            videos.forEach(video => {
-                                video.playbackRate = speed;
-                            });
-                        }
-                    }
-                });
-            });
-            
-            // Set default 2x speed on page load
-            document.querySelectorAll('.qualitative-subsection video, .subsection video, .ablation-subsection video').forEach(video => {
-                video.playbackRate = 2;
-            });
-            
-            // Set default 2x speed for Action Control Comparison section
-            const actionControlSection = Array.from(document.querySelectorAll('section.comparison-section')).find(section => {
-                const h2 = section.querySelector('h2');
-                return h2 && h2.textContent.includes('Action Control Comparison');
-            });
-            if (actionControlSection) {
-                actionControlSection.querySelectorAll('video').forEach(video => {
-                    video.playbackRate = 2;
-                });
-            }
-            
-            // Set default 2x speed for Qualitative Comparison section
-            const qualitativeComparisonSection = Array.from(document.querySelectorAll('section.comparison-section')).find(section => {
-                const h2 = section.querySelector('h2');
-                return h2 && h2.textContent.includes('Qualitative Comparison');
-            });
-            if (qualitativeComparisonSection) {
-                qualitativeComparisonSection.querySelectorAll('video').forEach(video => {
-                    video.playbackRate = 2;
-                });
-            }
-            
-            // Set default 2x speed for Motivations section
-            const motivationsSection = Array.from(document.querySelectorAll('section')).find(section => {
-                const h2 = section.querySelector('h2');
-                return h2 && h2.textContent.includes('Motivations');
-            });
-            if (motivationsSection) {
-                motivationsSection.querySelectorAll('video').forEach(video => {
-                    video.playbackRate = 2;
-                });
-            }
-            
-            // Activate 2x buttons by default
-            document.querySelectorAll('.speed-btn[data-speed="2"]').forEach(btn => {
-                btn.classList.add('active');
-            });
-            
-            // Pause all videos except teaser and motivations on page load for efficiency
-            const teaserSection = document.querySelector('.teaser-section');
-            const motivationsSectionEl = Array.from(document.querySelectorAll('section')).find(section => {
-                const h2 = section.querySelector('h2');
-                return h2 && h2.textContent.includes('Motivations');
-            });
-            
-            document.querySelectorAll('video').forEach(video => {
-                const isInTeaser = teaserSection && teaserSection.contains(video);
-                const isInMotivations = motivationsSectionEl && motivationsSectionEl.contains(video);
-                
-                if (!isInTeaser && !isInMotivations) {
-                    video.pause();
-                }
-            });
-            
-            // Function to pause all videos except teaser and motivations
-            function pauseOtherSections(exceptElement) {
+            if (sectionType === 'teaser') {
                 const teaserSection = document.querySelector('.teaser-section');
-                const motivationsSectionEl = Array.from(document.querySelectorAll('section')).find(section => {
+                
+                if (teaserSection) {
+                    teaserSection.querySelectorAll('.speed-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    const videos = teaserSection.querySelectorAll('video');
+                    videos.forEach(video => {
+                        video.playbackRate = speed;
+                    });
+                }
+            }
+            // Handle Motivations section
+            else if (sectionType === 'motivations') {
+                const motivationsSection = Array.from(document.querySelectorAll('section')).find(section => {
                     const h2 = section.querySelector('h2');
                     return h2 && h2.textContent.includes('Motivations');
                 });
                 
-                document.querySelectorAll('.qualitative-subsection, .subsection, .ablation-subsection, .comparison-section').forEach(section => {
-                    // Skip teaser and motivations
-                    if (teaserSection && teaserSection.contains(section)) return;
-                    if (motivationsSectionEl && motivationsSectionEl.contains(section)) return;
-                    // Skip the currently active section/subsection
-                    if (exceptElement && (section === exceptElement || section.contains(exceptElement) || exceptElement.contains(section))) return;
-                    
-                    section.querySelectorAll('video').forEach(video => {
-                        // Don't pause videos marked as always-play
-                        if (video.hasAttribute('data-always-play')) return;
-                        video.pause();
+                if (motivationsSection) {
+                    motivationsSection.querySelectorAll('.speed-btn').forEach(btn => {
+                        btn.classList.remove('active');
                     });
-                });
+                    this.classList.add('active');
+                    
+                    const videos = motivationsSection.querySelectorAll('video');
+                    videos.forEach(video => {
+                        video.playbackRate = speed;
+                    });
+                }
             }
-            
-            // Store the pauseOtherSections function globally for use in control handlers
-            window.pauseOtherSections = pauseOtherSections;
-        });
-
-        window.copyBibtex = function() {
-            const bibtexContent = document.getElementById('bibtex-content').textContent;
-            navigator.clipboard.writeText(bibtexContent).then(() => {
-                const button = document.querySelector('.copy-button');
-                const originalHTML = button.innerHTML;
-                button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
-                button.style.color = '#27ae60';
-                setTimeout(() => {
-                    button.innerHTML = originalHTML;
-                    button.style.color = '';
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
-            });
-        };
-        
-        // More Research dropdown toggle
-        window.toggleResearchDropdown = function() {
-            const dropdown = document.querySelector('.more-research-dropdown');
-            dropdown.classList.toggle('open');
-        };
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
-            const dropdown = document.querySelector('.more-research-dropdown');
-            if (!dropdown.contains(event.target)) {
-                dropdown.classList.remove('open');
+            // Handle Action Control Comparison section
+            else if (sectionType === 'action-control-comparison') {
+                const actionControlSection = Array.from(document.querySelectorAll('section.comparison-section')).find(section => {
+                    const h2 = section.querySelector('h2');
+                    return h2 && h2.textContent.includes('Action Control Comparison');
+                });
+                
+                if (actionControlSection) {
+                    actionControlSection.querySelectorAll('.speed-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    const videos = actionControlSection.querySelectorAll('video');
+                    videos.forEach(video => {
+                        video.playbackRate = speed;
+                    });
+                }
+            }
+            // Handle Qualitative Comparison section
+            else if (sectionType === 'qualitative-comparison') {
+                const qualitativeSection = Array.from(document.querySelectorAll('section.comparison-section')).find(section => {
+                    const h2 = section.querySelector('h2');
+                    return h2 && h2.textContent.includes('Qualitative Comparison');
+                });
+                
+                if (qualitativeSection) {
+                    qualitativeSection.querySelectorAll('.speed-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    const videos = qualitativeSection.querySelectorAll('video');
+                    videos.forEach(video => {
+                        video.playbackRate = speed;
+                    });
+                }
+            } else {
+                // Handle regular subsections (qualitative-subsection, subsection, or ablation-subsection)
+                const subsection = this.closest('.qualitative-subsection, .subsection, .ablation-subsection');
+                if (subsection) {
+                    subsection.querySelectorAll('.speed-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    const videos = subsection.querySelectorAll('video');
+                    videos.forEach(video => {
+                        video.playbackRate = speed;
+                    });
+                }
             }
         });
     });
+    
+    // Set default 1x speed on page load
+    document.querySelectorAll('.qualitative-subsection video, .subsection video, .ablation-subsection video').forEach(video => {
+        video.playbackRate = 1;
+    });
+    
+    // Set default 1x speed for Action Control Comparison section
+    const actionControlSection = Array.from(document.querySelectorAll('section.comparison-section')).find(section => {
+        const h2 = section.querySelector('h2');
+        return h2 && h2.textContent.includes('Action Control Comparison');
+    });
+    if (actionControlSection) {
+        actionControlSection.querySelectorAll('video').forEach(video => {
+            video.playbackRate = 1;
+        });
+    }
+    
+    // Set default 1x speed for Qualitative Comparison section
+    const qualitativeComparisonSection = Array.from(document.querySelectorAll('section.comparison-section')).find(section => {
+        const h2 = section.querySelector('h2');
+        return h2 && h2.textContent.includes('Qualitative Comparison');
+    });
+    if (qualitativeComparisonSection) {
+        qualitativeComparisonSection.querySelectorAll('video').forEach(video => {
+            video.playbackRate = 1;
+        });
+    }
+    
+    // Set default 1x speed for Motivations section
+    const motivationsSection = Array.from(document.querySelectorAll('section')).find(section => {
+        const h2 = section.querySelector('h2');
+        return h2 && h2.textContent.includes('Motivations');
+    });
+    if (motivationsSection) {
+        motivationsSection.querySelectorAll('video').forEach(video => {
+            video.playbackRate = 1;
+        });
+    }
+    
+    // Set default 1x speed for Teaser section
+    const teaserSectionEl = document.querySelector('.teaser-section');
+    if (teaserSectionEl) {
+        teaserSectionEl.querySelectorAll('video').forEach(video => {
+            video.playbackRate = 1;
+        });
+    }
+    
+    // Activate 1x buttons by default
+    document.querySelectorAll('.speed-btn[data-speed="1"]').forEach(btn => {
+        btn.classList.add('active');
+    });
+    
+    // Pause all videos except teaser and motivations on page load for efficiency
+    const teaserSection = document.querySelector('.teaser-section');
+    const motivationsSectionEl = Array.from(document.querySelectorAll('section')).find(section => {
+        const h2 = section.querySelector('h2');
+        return h2 && h2.textContent.includes('Motivations');
+    });
+    
+    document.querySelectorAll('video').forEach(video => {
+        const isInTeaser = teaserSection && teaserSection.contains(video);
+        const isInMotivations = motivationsSectionEl && motivationsSectionEl.contains(video);
+        
+        if (!isInTeaser && !isInMotivations) {
+            video.pause();
+        }
+    });
+    
+    // Function to pause all videos except teaser and motivations
+    function pauseOtherSections(exceptElement) {
+        const teaserSection = document.querySelector('.teaser-section');
+        const motivationsSectionEl = Array.from(document.querySelectorAll('section')).find(section => {
+            const h2 = section.querySelector('h2');
+            return h2 && h2.textContent.includes('Motivations');
+        });
+        
+        document.querySelectorAll('.qualitative-subsection, .subsection, .ablation-subsection, .comparison-section').forEach(section => {
+            if (teaserSection && teaserSection.contains(section)) return;
+            if (motivationsSectionEl && motivationsSectionEl.contains(section)) return;
+            if (exceptElement && (section === exceptElement || section.contains(exceptElement) || exceptElement.contains(section))) return;
+            
+            section.querySelectorAll('video').forEach(video => {
+                if (video.hasAttribute('data-always-play')) return;
+                video.pause();
+            });
+        });
+    }
+    
+    window.pauseOtherSections = pauseOtherSections;
+    
+    window.copyBibtex = function() {
+        const bibtexContent = document.getElementById('bibtex-content').textContent;
+        navigator.clipboard.writeText(bibtexContent).then(() => {
+            const button = document.querySelector('.copy-button');
+            const originalHTML = button.innerHTML;
+            button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+            button.style.color = '#27ae60';
+            setTimeout(() => {
+                button.innerHTML = originalHTML;
+                button.style.color = '';
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    };
+    
+    window.toggleResearchDropdown = function() {
+        const dropdown = document.querySelector('.more-research-dropdown');
+        dropdown.classList.toggle('open');
+    };
+    
+    document.addEventListener('click', function(event) {
+        const dropdown = document.querySelector('.more-research-dropdown');
+        if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+});
