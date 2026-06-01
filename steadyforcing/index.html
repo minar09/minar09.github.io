@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steady-Forcing: Static-View Nature Stream Long Video Generation</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22white%22/><text y=%22.9em%22 font-size=%2290%22 fill=%22%23f39c12%22>??/text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%2314213d%22/><text x=%2250%22 y=%2258%22 font-size=%2260%22 text-anchor=%22middle%22 fill=%22%23f39c12%22 font-family=%22Roboto,sans-serif%22>SF</text></svg>">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -68,7 +68,7 @@
     <!-- More Research Dropdown -->
     <nav class="top-nav">
         <div class="more-research-dropdown">
-            <button class="more-research-btn" onclick="toggleResearchDropdown()">
+            <button type="button" class="more-research-btn">
                 More Research
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
@@ -105,11 +105,22 @@
                         </svg>
                         Code
                     </a>
-                    <a href="https://www.huggingface.co/models/minar09/steady-forcing" class="rounded-button" target="_blank">
-                        <svg viewBox="0 0 24 24" width="24" height="24">
-                            <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    <a href="https://www.huggingface.co/models/minar09/Steady-Forcing-T2V-1.3B" class="rounded-button" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
+                            <circle cx="16" cy="17" r="11" fill="#FFD21E" />
+                            <circle cx="12.5" cy="15.5" r="1.5" fill="#24292e" />
+                            <ellipse cx="11.5" cy="13" rx="1.5" ry="0.7" fill="#fff" opacity="0.3" transform="rotate(-15 11.5 13)" />
+                            <circle cx="19.5" cy="15.5" r="1.5" fill="#24292e" />
+                            <ellipse cx="18.5" cy="13" rx="1.5" ry="0.7" fill="#fff" opacity="0.3" transform="rotate(-15 18.5 13)" />
+                            <ellipse cx="9" cy="18" rx="2" ry="1.2" fill="#FF8A65" opacity="0.6" />
+                            <ellipse cx="23" cy="18" rx="2" ry="1.2" fill="#FF8A65" opacity="0.6" />
+                            <path d="M13 19.5c1 1.5 2 2 3 2s2-.5 3-2" fill="none" stroke="#24292e" stroke-width="1.2" stroke-linecap="round" />
+                            <path d="M3 21c1.5-1 3.5-1 5 1s.5 3.5-1.5 4.5-4 .5-4.5-1.5C1.7 23.8 2.2 21.5 3 21z" fill="#FFD21E" stroke="#24292e" stroke-width="1" />
+                            <path d="M5.5 22.2c.5.5.8 1.2.8 2m-2-.8c.4.4.6 1 .6 1.6" fill="none" stroke="#24292e" stroke-width="0.8" stroke-linecap="round" />
+                            <path d="M29 21c-1.5-1-3.5-1-5 1s-.5 3.5 1.5 4.5 4 .5 4.5-1.5c.3-1.2-.2-3.5-1-4.5z" fill="#FFD21E" stroke="#24292e" stroke-width="1" />
+                            <path d="M26.5 22.2c-.5.5-.8 1.2-.8 2m2-.8c-.4.4-.6 1-.6 1.6" fill="none" stroke="#24292e" stroke-width="0.8" stroke-linecap="round" />
                         </svg>
-                        Model
+                        Hugging Face
                     </a>
                     <a href="bibtex.html" class="rounded-button" target="_blank">
                         <i class="ai ai-google-scholar" style="font-size: 20px;"></i>
@@ -141,7 +152,7 @@
                 </div>
                 
                 <div class="video-container compact-container">
-                    <h3>Dynamic Scene Cuts</h3>
+                    <h3>Longer Static Nature Flow Video Generation</h3>
                     <div class="video-wrapper">
                         <video loop muted playsinline autoplay controls>
                             <source src="videos/teaser/scene_cut.mp4" type="video/mp4">
@@ -152,14 +163,14 @@
                 </div>
                 
                 <div class="video-container compact-container">
-                    <h3>Action Control</h3>
+                    <h3>Nature Stream Dynamics</h3>
                     <div class="video-wrapper">
                         <video loop muted playsinline autoplay controls>
                             <source src="videos/teaser/action_control.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                    <p class="video-description">Dynamic prompt changes with instant responsiveness and smooth transitions</p>
+                    <p class="video-description">A steady natural flow example illustrating water, cloud, and storm dynamics in a fixed-camera setting.</p>
                 </div>
             </div>
         </section>
@@ -256,7 +267,7 @@
             
             <div class="qualitative-subsection">
                 <h3 class="subsection-title">
-                    Environmental Motion & Fluid Control
+                    Environmental Stream Dynamics
                     <div class="video-controls">
                         <button class="control-btn restart-btn" data-action="restart" data-subsection="environmental-motion">↻</button>
                         <button class="control-btn play-btn" data-action="play" data-subsection="environmental-motion">▶</button>
@@ -364,7 +375,7 @@
             
             <div class="qualitative-subsection multi-action-subsection">
                 <h3 class="subsection-title">
-                    Coordinated Multi-Element Nature Control
+                    Multi-Element Nature Streams
                     <div class="video-controls">
                         <button class="control-btn restart-btn" data-action="restart" data-subsection="multi-element">↻</button>
                         <button class="control-btn play-btn" data-action="play" data-subsection="multi-element">▶</button>
@@ -442,7 +453,7 @@
             
             <div class="qualitative-subsection">
                 <h3 class="subsection-title">
-                    Landscape Evolution & Weather Introduction
+                    Weather & Seasonal Flow
                     <div class="video-controls">
                         <button class="control-btn restart-btn" data-action="restart" data-subsection="weather-intro">↻</button>
                         <button class="control-btn play-btn" data-action="play" data-subsection="weather-intro">▶</button>
@@ -490,7 +501,7 @@
             
             <div class="qualitative-subsection">
                 <h3 class="subsection-title">
-                    Temporal Variation & Lighting Control
+                    Temporal Weather & Light Variation
                     <div class="video-controls">
                         <button class="control-btn restart-btn" data-action="restart" data-subsection="lighting-control">↻</button>
                         <button class="control-btn play-btn" data-action="play" data-subsection="lighting-control">▶</button>
@@ -529,6 +540,24 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdown = document.querySelector('.more-research-dropdown');
+            const button = document.querySelector('.more-research-btn');
+            if (!dropdown || !button) return;
+
+            button.addEventListener('click', function(event) {
+                event.stopPropagation();
+                dropdown.classList.toggle('open');
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove('open');
+                }
+            });
+        });
+    </script>
 
     <!-- BibTeX Section -->
     <section class="bibtex-section">
@@ -553,7 +582,8 @@
     
     <footer>
         <div class="divider" style="margin: 0 auto 0.5rem; width: 80px;"></div>
-        <p>??RoPE: Action-Controllable Infinite Video Generation Emerges From Autoregressive Self-Rollout</p>
+        <p>Steady-Forcing: Long-Horizon Nature-Flow Video Generation from Fixed Cameras</p>
+        <p>Template credit: <a href="https://infinity-rope.github.io/" target="_blank">Infinity-RoPE</a></p>
     </footer>
 </body>
 </html>
