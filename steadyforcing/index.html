@@ -91,7 +91,7 @@
                 </div>
                 <div class="divider"></div>
                 <p class="subtitle">
-                    <a href="https://minar09.github.io/" target="_blank">Matiur Rahman Minar</a><sup>1</sup>, <a href="https://owinhun.tistory.com/" target="_blank">Seunghun Oh</a><sup>2</sup>, <a href="" target="_blank">Ganghyeon Jeong</a><sup>2</sup>, <a href="https://cviplab.sogang.ac.kr/cviplab/1249.html" target="_blank">Unsang Park</a><sup>1,2</sup><br>
+                    <a href="https://minar09.github.io/" target="_blank">Matiur Rahman Minar</a><sup>1</sup>, <a href="https://owinhun.tistory.com/" target="_blank">Seunghun Oh</a><sup>2</sup>, <a href="https://github.com/Jugahy" target="_blank">Ganghyeon Jeong</a><sup>2</sup>, <a href="https://cviplab.sogang.ac.kr/cviplab/1249.html" target="_blank">Unsang Park</a><sup>1,2</sup><br>
                     <sup>1</sup><a href="https://ecs.sogang.ac.kr/ecs/index_new.html" target="_blank">Department of Computer Science and Engineering, Sogang University</a> &nbsp; <sup>2</sup><a href="https://ai.sogang.ac.kr/ai/index_new.html" target="_blank">Department of Artificial Intelligence, Sogang University</a>
                 </p>
                 <div class="button-container">
@@ -141,36 +141,150 @@
             
             <div class="video-grid compact-grid">
                 <div class="video-container compact-container">
-                    <h3>Long Static Nature Flow Video Generation</h3>
+                    <h3>Empty Sea Beach Scene</h3>
                     <div class="video-wrapper">
-                        <video loop muted playsinline autoplay controls>
-                            <source src="videos/teaser/ultra_long.mp4" type="video/mp4">
+                        <video loop muted playsinline autoplay controls preload="metadata">
+                            <source src="videos/steady_forcing/60s/A_continuous_South_Korean_rainy_city_street_scene_recorded_by_a_completely_fixed,_static,_tripod_mou-0-1779332156.9673004.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                    <p class="video-description">Generate videos of unlimited length beyond the base model's temporal horizon</p>
+                    <p class="video-description">A calm fixed-camera beach stream with steady background persistence.</p>
                 </div>
-                
                 <div class="video-container compact-container">
-                    <h3>Longer Static Nature Flow Video Generation</h3>
+                    <h3>Tranquil River Under Concrete Bridge</h3>
                     <div class="video-wrapper">
-                        <video loop muted playsinline autoplay controls>
-                            <source src="videos/teaser/scene_cut.mp4" type="video/mp4">
+                        <video loop muted playsinline autoplay controls preload="metadata">
+                            <source src="videos/steady_forcing/60s/A_stunning_tranquil_river_scene_beneath_a_concrete_bridge_recorded_by_a_completely_fixed,_static,_tr-0-1779331193.1485.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                    <p class="video-description">Cinematic multi-cut transitions within a single autoregressive rollout</p>
+                    <p class="video-description">A serene river scene with sustained motion and background stability.</p>
                 </div>
-                
                 <div class="video-container compact-container">
-                    <h3>Nature Stream Dynamics</h3>
+                    <h3>Forest Storm Scene</h3>
                     <div class="video-wrapper">
-                        <video loop muted playsinline autoplay controls>
-                            <source src="videos/teaser/action_control.mp4" type="video/mp4">
+                        <video loop muted playsinline autoplay controls preload="metadata">
+                            <source src="videos/steady_forcing/60s/A_dangerous_South_Korean_hilly_forest_storm_scene_recorded_by_a_completely_fixed,_static,_tripod_mou-0-1779332745.146654.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                    <p class="video-description">A steady natural flow example illustrating water, cloud, and storm dynamics in a fixed-camera setting.</p>
+                    <p class="video-description">A stormy forest stream that highlights fluid motion under fixed-camera conditions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-container duration-results-section">
+            <h2 style="margin-top: 1.5rem;">Duration-Based Results</h2>
+            <div class="divider"></div>
+            <div class="section-description">
+                <p>Evaluating Steady-Forcing across fixed-camera real-world streams at 60s, 120s, and 240s durations.</p>
+            </div>
+
+            <div class="duration-group">
+                <div class="duration-title">60-Second Evaluation</div>
+                <div class="video-row">
+                    <div class="video-container">
+                        <h3>Street Food Shop Scene</h3>
+                        <div class="video-wrapper">
+                            <video controls loop muted playsinline preload="metadata">
+                                <source src="videos/steady_forcing/60s/A_beautiful_rural_South_Korean_street_food_shop_scene,_recorded_by_a_completely_fixed,_static,_tripo-0-1779331568.3330867.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">A 60-second fixed-camera street food scene with steady background composition.</p>
+                    </div>
+                    <div class="video-container">
+                        <h3>Empty Sea Beach Scene</h3>
+                        <div class="video-wrapper">
+                            <video controls loop muted playsinline preload="metadata">
+                                <source src="videos/steady_forcing/60s/A_beautiful_South_Korean_empty_sea_beach_scene_recorded_by_a_completely_fixed,_static,_tripod_mounte-0-1779332549.1318147.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">A calm 60-second beach stream with minimal motion and strong spatial persistence.</p>
+                    </div>
+                    <div class="video-container">
+                        <h3>Mountain Stream Flow</h3>
+                        <div class="video-wrapper">
+                            <video controls loop muted playsinline preload="metadata">
+                                <source src="videos/steady_forcing/60s/A_tranquil_mountain_stream_in_a_rural_South_Korean_valley,_recorded_by_a_completely_fixed,_static,_t-0-1779329064.931559.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">A 60-second rural stream showcasing continuous river motion under a fixed viewpoint.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="duration-group">
+                <div class="duration-title">120-Second Evaluation</div>
+                <div class="video-row">
+                    <div class="video-container">
+                        <h3>Forest River Long Take</h3>
+                        <div class="video-wrapper">
+                            <video controls loop muted playsinline preload="metadata">
+                                <source src="videos/steady_forcing/120s/A_cinematic_wide_shot_of_a_serene_forest_river,_its_crystal-clear_water_flowing_gently_and_unendingl-0-1779334178.0582945.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">A 120-second forest river sequence with sustained water motion and static framing.</p>
+                    </div>
+                    <div class="video-container">
+                        <h3>Mountain Waterfall Cascade</h3>
+                        <div class="video-wrapper">
+                            <video controls loop muted playsinline preload="metadata">
+                                <source src="videos/steady_forcing/120s/A_dramatic_medium_shot_of_a_massive_mountain_waterfall,_deep_blue_water_crashing_and_splashing_viole-0-1779334563.2915363.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">A 120-second waterfall stream demonstrating continuous fluid dynamics from a fixed camera.</p>
+                    </div>
+                    <div class="video-container">
+                        <h3>Urban Rainstorm at Night</h3>
+                        <div class="video-wrapper">
+                            <video controls loop muted playsinline preload="metadata">
+                                <source src="videos/steady_forcing/120s/A_rainy_urban_street_at_night,_recorded_by_a_fixed_tripod_camera._The_solid_concrete_buildings_and_m-0-1779335699.394575.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">A 120-second nighttime rainstorm stream with wet urban details and stationary framing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="duration-group">
+                <div class="duration-title">240-Second Evaluation</div>
+                <div class="video-row">
+                    <div class="video-container">
+                        <h3>Massive Waterfall Plunge</h3>
+                        <div class="video-wrapper">
+                            <video controls loop muted playsinline preload="metadata">
+                                <source src="videos/steady_forcing/240s/A_massive_mountain_waterfall_crashing_continuously_into_a_misty_pool,_recorded_by_a_completely_fixed-0-1779343775.4229198.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">A full 240-second fixed-camera waterfall sequence with continuous motion and solid spatial consistency.</p>
+                    </div>
+                    <div class="video-container">
+                        <h3>Serene Forest River Loop</h3>
+                        <div class="video-wrapper">
+                            <video controls loop muted playsinline preload="metadata">
+                                <source src="videos/steady_forcing/240s/A_serene_forest_river,_its_clear_water_flowing_over_smooth_stones_without_pause_or_interruption,_rec-0-1779334841.5164933.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">A 240-second forest river with a consistent steady view and continuous water motion.</p>
+                    </div>
+                    <div class="video-container">
+                        <h3>Urban Rainstorm Continuous Flow</h3>
+                        <div class="video-wrapper">
+                            <video controls loop muted playsinline preload="metadata">
+                                <source src="videos/steady_forcing/240s/A_South_Korean_urban_rainstorm,_recorded_by_a_fixed_tripod_camera._Rain_falls_continuously_onto_the_-0-1779345687.0092273.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">A 240-second fixed-camera urban rainstorm sequence with persistent continuity.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -530,6 +644,87 @@
                         <div class="video-wrapper">
                             <video controls loop muted playsinline preload="none" data-lazy-video="true">
                                 <source data-src="videos/qualitative_results/lighting/cloud_occlusion_light_shift.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qualitative-subsection">
+                <h3 class="subsection-title">
+                    Fixed-Camera Real-World Results
+                </h3>
+                <p class="subsection-description">New user-uploaded fixed-tripod scenes demonstrating stable background persistence across real-world coastal, urban, and forest environments.</p>
+                <div class="video-grid" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: 1fr;">
+                    <div class="video-container">
+                        <h3>Empty Sea Beach Scene</h3>
+                        <div class="video-wrapper">
+                            <video controls loop muted playsinline preload="metadata">
+                                <source src="videos/steady_forcing/A_beautiful_South_Korean_empty_sea_beach_scene_recorded_by_a_completely_fixed,_static,_tripod_mounte-0-1779332549.1318147.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="video-container">
+                        <h3>Flooded Urban Street (Goyang-si)</h3>
+                        <div class="video-wrapper">
+                            <video controls loop muted playsinline preload="metadata">
+                                <source src="videos/steady_forcing/A_completely_fixed,_tripod-mounted_camera_captures_a_flooded_urban_street_in_Goyang-si,_Wondang,_Sou-0-1779331968.8436062.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="video-container">
+                        <h3>Continuous Rainy City Street</h3>
+                        <div class="video-wrapper">
+                            <video controls loop muted playsinline preload="metadata">
+                                <source src="videos/steady_forcing/A_continuous_South_Korean_rainy_city_street_scene_recorded_by_a_completely_fixed,_static,_tripod_mou-0-1779332156.9673004.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="video-container">
+                        <h3>Continuous Urban Town Street</h3>
+                        <div class="video-wrapper">
+                            <video controls loop muted playsinline preload="metadata">
+                                <source src="videos/steady_forcing/A_continuous_South_Korean_urban_town_street_scene_recorded_by_a_completely_fixed,_static,_tripod_mou-0-1779333121.9408615.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="video-container">
+                        <h3>Continuous Urban Fire Scene</h3>
+                        <div class="video-wrapper">
+                            <video controls loop muted playsinline preload="metadata">
+                                <source src="videos/steady_forcing/A_continuous_urban_fire_scene_recorded_by_a_completely_fixed,_static,_tripod_mounted_camera._The_cam-0-1779331773.0445213.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="video-container">
+                        <h3>Dangerous Night River Scene</h3>
+                        <div class="video-wrapper">
+                            <video controls loop muted playsinline preload="metadata">
+                                <source src="videos/steady_forcing/A_dangerous_rural_South_Korean_river_scene_at_night_recorded_by_a_completely_fixed%2C_static%2C_tripod-m-0-1779332934.6239896.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="video-container">
+                        <h3>Forest Storm Scene</h3>
+                        <div class="video-wrapper">
+                            <video controls loop muted playsinline preload="metadata">
+                                <source src="videos/steady_forcing/A_dangerous_South_Korean_hilly_forest_storm_scene_recorded_by_a_completely_fixed,_static,_tripod_mou-0-1779332745.146654.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="video-container">
+                        <h3>Tranquil River Under Concrete Bridge</h3>
+                        <div class="video-wrapper">
+                            <video controls loop muted playsinline preload="metadata">
+                                <source src="videos/steady_forcing/A_stunning_tranquil_river_scene_beneath_a_concrete_bridge_recorded_by_a_completely_fixed,_static,_tr-0-1779331193.1485.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
