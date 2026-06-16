@@ -1,6 +1,6 @@
 @article{minar2025steady,
   title={Steady-Forcing: Balancing Spatial Persistence and Motion Continuity in Long-Horizon Nature Video Diffusion},
   author={Minar, Matiur Rahman and Oh, Seunghun and Jeong, Ganghyeon and Park, Unsang},
-  journal={arXiv preprint arXiv:2606.7661673},
+  journal={arXiv preprint arXiv:2606.14732},
   year={2026}
 }
