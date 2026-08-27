@@ -1,0 +1,6 @@
+@article{minar2026snfbench,
+  title   = {SNF-Bench: Separating Static Drift from Natural Flow in Long-Horizon Fixed-Camera Video Generation},
+  author  = {Minar, Matiur Rahman and Oh, Seunghun and Jeong, Ganghyeon and Park, Unsang},
+  journal = {arXiv preprint},
+  year    = {2026}
+}
