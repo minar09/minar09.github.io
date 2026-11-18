@@ -1,0 +1,5 @@
+@misc{minar2026scenetether,
+  title         = {SceneTether: Activity-Gated Value Anchoring for Long-Horizon Autoregressive Image Animation},
+  author        = {Matiur Rahman Minar and Seunghun Oh and Ganghyeon Jeong and Unsang Park},
+  year          = {2026},
+}
