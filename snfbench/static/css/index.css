@@ -892,7 +892,7 @@ code {
 @media screen and (max-width: 768px) {
   .hero-body { padding: 2rem 1rem; }
 
-  .publication-header .hero-body { padding: 2.5rem 1rem 1.25rem; }
+  .publication-header .hero-body { padding: 4rem 1rem 1.25rem; }
 
   .publication-title {
     font-size: 2rem !important;
@@ -926,20 +926,13 @@ code {
   }
 
   .more-works-container {
-    top: auto;
+    top: .75rem;
     right: 1rem;
-    bottom: 1rem;
   }
 
   .more-works-btn { padding: .55rem .85rem; font-size: .8rem; }
 
-  .scroll-to-top {
-    bottom: calc(1rem + 40px + .75rem);
-  }
-
   .more-works-dropdown {
-    top: auto;
-    bottom: calc(100% + .5rem);
     width: min(370px, calc(100vw - 2rem));
   }
 

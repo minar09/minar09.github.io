@@ -41,26 +41,31 @@
 <body>
 
   <div class="more-works-container">
-    <button class="more-works-btn" type="button" onclick="toggleMoreWorks()" title="Related works" aria-expanded="false" aria-controls="moreWorksDropdown">
+    <button class="more-works-btn" type="button" onclick="toggleMoreWorks()" aria-expanded="false" aria-controls="moreWorksDropdown">
       <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5a2 2 0 00-2 2v14l4-3h12a2 2 0 002-2V5a2 2 0 00-2-2m0 11H6.33L5 15.25V5h14zm-9-7h7v2h-7zm0 3h5v2h-5zM7 7h2v5H7z"/></svg>
-      <span>Related Works</span>
+      <span>Related Papers</span>
       <svg class="icon-svg dropdown-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
     </button>
     <div class="more-works-dropdown" id="moreWorksDropdown" aria-hidden="true">
       <div class="dropdown-header">
-        <h4>Related Works</h4>
-        <button class="close-btn" type="button" onclick="toggleMoreWorks()" aria-label="Close related works">
+        <h4>Related Papers</h4>
+        <button class="close-btn" type="button" onclick="toggleMoreWorks()" aria-label="Close related papers">
           <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.71L12 12l6.3 6.29-1.41 1.42L10.59 13.4 4.29 19.7 2.88 18.3 9.17 12 2.88 5.71 4.29 4.29l6.3 6.3 6.29-6.3z"/></svg>
         </button>
       </div>
       <div class="works-list">
-        <a href="https://minar09.github.io/steadyforcing/" class="work-item" target="_blank" rel="noreferrer">
+        <a href="../scenetether/" class="work-item">
+          <div class="work-info">
+            <h5>SceneTether</h5>
+            <p>Long-horizon image animation with activity-gated anchoring to the source image.</p>
+          </div>
+        </a>
+        <a href="../steadyforcing/" class="work-item">
           <div class="work-info">
             <h5>Steady-Forcing</h5>
             <p>Long-horizon fixed-camera nature video generation with balanced spatial persistence and motion continuity.</p>
             <span class="work-venue">arXiv 2026</span>
           </div>
-          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14z"/><path d="M5 5h6v2H7v10h10v-4h2v6H5z"/></svg>
         </a>
         
       </div>

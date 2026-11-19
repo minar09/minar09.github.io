@@ -1,0 +1,301 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SceneTether | Activity-Gated Value Anchoring for Long-Horizon Autoregressive Image Animation</title>
+  <meta name="description" content="SceneTether is a training-free method for animating still images for minutes while preserving stable scene structure and localized motion.">
+  <link rel="canonical" href="https://minar09.github.io/scenetether/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://minar09.github.io/scenetether/">
+  <meta property="og:title" content="SceneTether: Activity-Gated Value Anchoring for Long-Horizon Autoregressive Image Animation">
+  <meta property="og:description" content="Training-free image animation with source-value anchoring in low-activity regions.">
+  <meta property="og:image" content="https://minar09.github.io/scenetether/assets/videos/teaser/input.jpg">
+  <link rel="stylesheet" href="static/vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="static/vendor/katex/katex.min.js"></script>
+  <script defer src="static/js/math.js"></script>
+  <script defer src="static/js/math-explanations.js"></script>
+  <script defer src="gallery.js"></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="section-nav" aria-label="Page sections">
+    <div class="wrapper nav-inner">
+      <a class="brand" href="#top">SceneTether</a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#observation">Observation</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#citation">Citation</a>
+      </div>
+      <details class="related-papers">
+        <summary class="button">
+          Related Papers
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+        </summary>
+        <div class="related-papers-links">
+          <a href="../steadyforcing/">Steady-Forcing</a>
+          <a href="../snfbench/">SNF-Bench</a>
+        </div>
+      </details>
+    </div>
+  </nav>
+  <main id="main">
+    <header class="wrapper publication">
+      <h1><span>SceneTether</span><br>Activity-Gated Value Anchoring for<br class="desktop-break"> Long-Horizon Autoregressive Image Animation</h1>
+      <p class="authors">
+        <a href="../">Matiur Rahman Minar</a>
+        <a href="https://owinhun.github.io/" target="_blank" rel="noreferrer">Seunghun Oh</a>
+        <a href="https://github.com/Jugahy" target="_blank" rel="noreferrer">Ganghyeon Jeong</a>
+        <a href="https://cviplab.sogang.ac.kr/cviplab/1249.html" target="_blank" rel="noreferrer">Unsang Park</a>
+      </p>
+      <div class="actions">
+        <a class="button primary" href="#results">Explore results</a>
+        <a class="button" href="https://github.com/minar09/SceneTether" target="_blank" rel="noreferrer">GitHub Code</a>
+        <a class="button" href="bibtex.txt">BibTeX</a>
+      </div>
+    </header>
+
+    <section id="overview" class="wrapper overview" aria-labelledby="overview-title">
+      <div class="section-heading">
+        <h2 id="overview-title">One photograph, one minute of motion</h2>
+        <button class="button" type="button" data-play-group hidden>Play together</button>
+      </div>
+      <div class="media-grid" style="--columns: 4">
+          <figure class="ours"><video controls muted playsinline preload="none" src="assets/videos/teaser/scenetether.mp4" poster="assets/videos/teaser/poster.jpg" aria-label="SceneTether — flowing rapids"></video><figcaption>SceneTether</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/teaser/spatial_echo.mp4" poster="assets/videos/teaser/poster.jpg" aria-label="Spatial Echo-Forcing — flowing rapids"></video><figcaption>Spatial Echo-Forcing</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/teaser/dymos_port.mp4" poster="assets/videos/teaser/poster.jpg" aria-label="DyMoS port — flowing rapids"></video><figcaption>DyMoS port</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/teaser/alg_inspired.mp4" poster="assets/videos/teaser/poster.jpg" aria-label="ALG-inspired — flowing rapids"></video><figcaption>ALG-inspired</figcaption></figure>
+        </div>
+      <div class="summary">
+        <img src="assets/videos/teaser/input.jpg" alt="Input photograph of the rapids and shoreline" width="832" height="480">
+        <p><strong>SceneTether</strong> is a training-free method for long-horizon image animation. It anchors low-activity regions to the input photograph while letting water, smoke, and fire continue to move.</p>
+      </div>
+      <details>
+        <summary>Inspect the 58-second detail crops and motion maps</summary>
+        <div class="media-grid" style="--columns: 4">
+          <figure class="ours"><img src="assets/images/teaser/scenetether_detail.png" alt="SceneTether shoreline detail at 58 seconds" width="300" height="150" loading="lazy" decoding="async"><img src="assets/images/teaser/scenetether_act.png" alt="SceneTether late motion heatmap" width="832" height="480" loading="lazy" decoding="async"><figcaption>SceneTether</figcaption></figure>
+          <figure><img src="assets/images/teaser/spatial_echo_detail.png" alt="Spatial Echo-Forcing shoreline detail at 58 seconds" width="300" height="150" loading="lazy" decoding="async"><img src="assets/images/teaser/spatial_echo_act.png" alt="Spatial Echo-Forcing late motion heatmap" width="832" height="480" loading="lazy" decoding="async"><figcaption>Spatial Echo-Forcing</figcaption></figure>
+          <figure><img src="assets/images/teaser/dymos_port_detail.png" alt="DyMoS port shoreline detail at 58 seconds" width="300" height="150" loading="lazy" decoding="async"><img src="assets/images/teaser/dymos_port_act.png" alt="DyMoS port late motion heatmap" width="832" height="480" loading="lazy" decoding="async"><figcaption>DyMoS port</figcaption></figure>
+          <figure><img src="assets/images/teaser/alg_inspired_detail.png" alt="ALG-inspired shoreline detail at 58 seconds" width="300" height="150" loading="lazy" decoding="async"><img src="assets/images/teaser/alg_inspired_act.png" alt="ALG-inspired late motion heatmap" width="832" height="480" loading="lazy" decoding="async"><figcaption>ALG-inspired</figcaption></figure>
+        </div>
+      </details>
+    </section>
+
+    <section class="band abstract" aria-labelledby="abstract-title">
+      <div class="wrapper">
+        <h2 id="abstract-title">Abstract</h2>
+        <p class="lead">Long-horizon image animation has to preserve the scene as moving materials evolve. SceneTether estimates a spatial activity map during warm-up and uses it to anchor low-activity attention values to the source image during autoregressive generation. Active regions retain their recent values. On a Causal Forcing++ evaluation of fixed-camera natural scenes, SceneTether improves source-support PSNR over a spatial Echo-Forcing port by 5.88 dB at one minute and by 7.31 dB at four minutes on the pre-registered subset.</p>
+      </div>
+    </section>
+
+    <section class="band" id="observation" aria-labelledby="observation-title">
+      <div class="wrapper">
+        <div class="section-heading">
+          <h2 id="observation-title">Observation</h2>
+          <button class="button" type="button" data-play-group hidden>Play together</button>
+        </div>
+        <p class="lead">Autoregressive generators build each new segment from recent output. Over minutes, appearance errors can accumulate even in parts of the scene that should stay still. A flash-flood example shows why persistent scenery and localized motion need different treatment.</p>
+        <div class="media-grid" style="--columns: 3">
+          <figure><img src="assets/videos/analysis/activity_map.png" alt="Frozen activity map for the flash-flood scene" width="416" height="240" loading="lazy" decoding="async"><figcaption>Warm-up activity map</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/analysis/untethered.mp4" poster="assets/videos/analysis/untethered.jpg" aria-label="Flash flood without value anchoring"></video><figcaption>Untethered</figcaption></figure>
+          <figure class="ours"><video controls muted playsinline preload="none" src="assets/videos/analysis/scenetether.mp4" poster="assets/videos/analysis/scenetether.jpg" aria-label="Flash flood with SceneTether"></video><figcaption>SceneTether</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="method" aria-labelledby="method-title">
+      <div class="wrapper">
+        <h2 id="method-title">Method</h2>
+        <p class="lead">SceneTether uses a frozen activity map to decide where the attention read should retain recent values and where it should blend them toward the input image. It runs on a frozen Causal Forcing++ backbone and adds zero denoising evaluations.</p>
+        <figure><a href="assets/images/method-overview.png"><img src="assets/images/method-overview.png" alt="SceneTether pipeline showing source prefill, activity-map estimation, and gated value anchoring during autoregressive generation" width="3009" height="1050" loading="lazy" decoding="async"></a><figcaption>SceneTether estimates activity once from the first 1.5 seconds, then reuses that map throughout the rollout.</figcaption></figure>
+        <div class="steps">
+          <div><h3>Store the source</h3><p>Keep the input image’s clean values as a spatial reference.</p></div>
+          <div><h3>Estimate activity</h3><p>Identify moving regions during warm-up and freeze the spatial weights.</p></div>
+          <div><h3>Blend at read time</h3><p>Read co-located source values in stable regions and recent values in active regions.</p></div>
+        </div>
+        <div class="equation">
+          <h3>Activity-gated value anchoring</h3>
+          <div class="formula" tabindex="0" role="group" aria-label="Value anchoring formula. Use the left and right arrow keys to explore its terms." data-math-terms="true" data-latex="\htmlClass{math-term term-tethered}{\widetilde{V}_r(p)}=(1-\htmlClass{math-term term-schedule}{\beta(p)})\,\htmlClass{math-term term-recent}{V_r(p)}+\beta(p)\,\htmlClass{math-term term-source}{V_0(p)}">Ṽᵣ(p) = (1 − β(p)) Vᵣ(p) + β(p) V₀(p)</div>
+          <p>At spatial position <var>p</var>, <var>β</var> controls how much of the source value enters the attention read. The weight is zero in active regions and increases in static regions.</p>
+        </div>
+        <details>
+          <summary>See the attention read in detail</summary>
+          <a href="assets/images/value-tethering.png"><img src="assets/images/value-tethering.png" alt="Attention diagram showing interpolation of recent and source values while using all newest-frame keys" width="3391" height="1419" loading="lazy" decoding="async"></a>
+        </details>
+      </div>
+    </section>
+
+    <section class="band" id="results" aria-label="Results">
+      <div class="wrapper">
+        <div class="result-group" data-gallery>
+          <div class="section-heading">
+            <h2>Baseline comparisons</h2>
+            <div class="controls">
+              <label hidden>Scene
+                <select data-gallery-select aria-label="Comparison scene">
+                  <option value="rural_river">Rural river</option>
+              <option value="night_rain">Night rain</option>
+              <option value="golden_flood">Flood at sunset</option>
+              <option value="firefighting">Firefighting</option>
+                </select>
+              </label>
+              <button class="button" type="button" data-play-group hidden>Play together</button>
+            </div>
+          </div>
+          <p class="lead">Compare three rollouts generated from the same input on Causal Forcing++.</p>
+          <div data-gallery-panel="rural_river">
+            <h3>Rural river</h3>
+            <div class="media-grid" style="--columns: 3">
+          <figure><video controls muted playsinline preload="none" src="assets/videos/comparisons/rural_river/untethered.mp4" poster="assets/videos/comparisons/rural_river/poster.jpg" aria-label="Untethered — Rural river"></video><figcaption>Untethered</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/comparisons/rural_river/spatial_echo.mp4" poster="assets/videos/comparisons/rural_river/poster.jpg" aria-label="Spatial Echo-Forcing — Rural river"></video><figcaption>Spatial Echo-Forcing</figcaption></figure>
+          <figure class="ours"><video controls muted playsinline preload="none" src="assets/videos/comparisons/rural_river/ours.mp4" poster="assets/videos/comparisons/rural_river/poster.jpg" aria-label="SceneTether — Rural river"></video><figcaption>SceneTether</figcaption></figure>
+        </div>
+          </div>
+          <div data-gallery-panel="night_rain">
+            <h3>Night rain</h3>
+            <div class="media-grid" style="--columns: 3">
+          <figure><video controls muted playsinline preload="none" src="assets/videos/comparisons/night_rain/untethered.mp4" poster="assets/videos/comparisons/night_rain/poster.jpg" aria-label="Untethered — Night rain"></video><figcaption>Untethered</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/comparisons/night_rain/spatial_echo.mp4" poster="assets/videos/comparisons/night_rain/poster.jpg" aria-label="Spatial Echo-Forcing — Night rain"></video><figcaption>Spatial Echo-Forcing</figcaption></figure>
+          <figure class="ours"><video controls muted playsinline preload="none" src="assets/videos/comparisons/night_rain/ours.mp4" poster="assets/videos/comparisons/night_rain/poster.jpg" aria-label="SceneTether — Night rain"></video><figcaption>SceneTether</figcaption></figure>
+        </div>
+          </div>
+          <div data-gallery-panel="golden_flood">
+            <h3>Flood at sunset</h3>
+            <div class="media-grid" style="--columns: 3">
+          <figure><video controls muted playsinline preload="none" src="assets/videos/comparisons/golden_flood/untethered.mp4" poster="assets/videos/comparisons/golden_flood/poster.jpg" aria-label="Untethered — Flood at sunset"></video><figcaption>Untethered</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/comparisons/golden_flood/spatial_echo.mp4" poster="assets/videos/comparisons/golden_flood/poster.jpg" aria-label="Spatial Echo-Forcing — Flood at sunset"></video><figcaption>Spatial Echo-Forcing</figcaption></figure>
+          <figure class="ours"><video controls muted playsinline preload="none" src="assets/videos/comparisons/golden_flood/ours.mp4" poster="assets/videos/comparisons/golden_flood/poster.jpg" aria-label="SceneTether — Flood at sunset"></video><figcaption>SceneTether</figcaption></figure>
+        </div>
+          </div>
+          <div data-gallery-panel="firefighting">
+            <h3>Firefighting</h3>
+            <div class="media-grid" style="--columns: 3">
+          <figure><video controls muted playsinline preload="none" src="assets/videos/comparisons/firefighting/untethered.mp4" poster="assets/videos/comparisons/firefighting/poster.jpg" aria-label="Untethered — Firefighting"></video><figcaption>Untethered</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/comparisons/firefighting/spatial_echo.mp4" poster="assets/videos/comparisons/firefighting/poster.jpg" aria-label="Spatial Echo-Forcing — Firefighting"></video><figcaption>Spatial Echo-Forcing</figcaption></figure>
+          <figure class="ours"><video controls muted playsinline preload="none" src="assets/videos/comparisons/firefighting/ours.mp4" poster="assets/videos/comparisons/firefighting/poster.jpg" aria-label="SceneTether — Firefighting"></video><figcaption>SceneTether</figcaption></figure>
+        </div>
+          </div>
+        </div>
+
+        <div class="result-group" data-gallery>
+          <div class="section-heading">
+            <h2>Long-horizon animation</h2>
+            <div class="controls">
+              <label hidden>Scene
+                <select data-gallery-select aria-label="Long-horizon scene">
+                  <option value="tropical_shore">Tropical shore</option>
+                  <option value="steam_vent">Steam vent</option>
+                  <option value="fire_pit">Fire pit</option>
+                  <option value="rain_window_city">Rain on a city window</option>
+                  <option value="farmland_sluice">Farmland sluice</option>
+                  <option value="dust_storm_road">Dust storm</option>
+                </select>
+              </label>
+              <button class="button" type="button" data-play-group hidden>Play together</button>
+            </div>
+          </div>
+          <p class="lead">Explore SceneTether clips at one, two, and four minutes from six fixed-camera scenes.</p>
+          <div data-gallery-panel="tropical_shore">
+            <h3>Tropical shore</h3>
+            <div class="media-grid" style="--columns: 3">
+          <figure><video controls muted playsinline preload="none" src="assets/videos/horizons/tropical_shore/60s.mp4" poster="assets/videos/horizons/tropical_shore/poster.jpg" aria-label="Tropical shore — 1 minute"></video><figcaption>1 minute</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/horizons/tropical_shore/120s.mp4" poster="assets/videos/horizons/tropical_shore/poster.jpg" aria-label="Tropical shore — 2 minutes"></video><figcaption>2 minutes</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/horizons/tropical_shore/240s.mp4" poster="assets/videos/horizons/tropical_shore/poster.jpg" aria-label="Tropical shore — 4 minutes"></video><figcaption>4 minutes</figcaption></figure>
+        </div>
+          </div>
+          <div data-gallery-panel="steam_vent">
+            <h3>Steam vent</h3>
+            <div class="media-grid" style="--columns: 3">
+          <figure><video controls muted playsinline preload="none" src="assets/videos/horizons/steam_vent/60s.mp4" poster="assets/videos/horizons/steam_vent/poster.jpg" aria-label="Steam vent — 1 minute"></video><figcaption>1 minute</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/horizons/steam_vent/120s.mp4" poster="assets/videos/horizons/steam_vent/poster.jpg" aria-label="Steam vent — 2 minutes"></video><figcaption>2 minutes</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/horizons/steam_vent/240s.mp4" poster="assets/videos/horizons/steam_vent/poster.jpg" aria-label="Steam vent — 4 minutes"></video><figcaption>4 minutes</figcaption></figure>
+        </div>
+          </div>
+          <div data-gallery-panel="fire_pit">
+            <h3>Fire pit</h3>
+            <div class="media-grid" style="--columns: 3">
+          <figure><video controls muted playsinline preload="none" src="assets/videos/horizons/fire_pit/60s.mp4" poster="assets/videos/horizons/fire_pit/poster.jpg" aria-label="Fire pit — 1 minute"></video><figcaption>1 minute</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/horizons/fire_pit/120s.mp4" poster="assets/videos/horizons/fire_pit/poster.jpg" aria-label="Fire pit — 2 minutes"></video><figcaption>2 minutes</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/horizons/fire_pit/240s.mp4" poster="assets/videos/horizons/fire_pit/poster.jpg" aria-label="Fire pit — 4 minutes"></video><figcaption>4 minutes</figcaption></figure>
+        </div>
+          </div>
+          <div data-gallery-panel="rain_window_city">
+            <h3>Rain on a city window</h3>
+            <div class="media-grid" style="--columns: 3">
+          <figure><video controls muted playsinline preload="none" src="assets/videos/horizons/rain_window_city/60s.mp4" poster="assets/videos/horizons/rain_window_city/poster.jpg" aria-label="Rain on a city window — 1 minute"></video><figcaption>1 minute</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/horizons/rain_window_city/120s.mp4" poster="assets/videos/horizons/rain_window_city/poster.jpg" aria-label="Rain on a city window — 2 minutes"></video><figcaption>2 minutes</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/horizons/rain_window_city/240s.mp4" poster="assets/videos/horizons/rain_window_city/poster.jpg" aria-label="Rain on a city window — 4 minutes"></video><figcaption>4 minutes</figcaption></figure>
+        </div>
+          </div>
+          <div data-gallery-panel="farmland_sluice">
+            <h3>Farmland sluice</h3>
+            <div class="media-grid" style="--columns: 3">
+          <figure><video controls muted playsinline preload="none" src="assets/videos/horizons/farmland_sluice/60s.mp4" poster="assets/videos/horizons/farmland_sluice/poster.jpg" aria-label="Farmland sluice — 1 minute"></video><figcaption>1 minute</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/horizons/farmland_sluice/120s.mp4" poster="assets/videos/horizons/farmland_sluice/poster.jpg" aria-label="Farmland sluice — 2 minutes"></video><figcaption>2 minutes</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/horizons/farmland_sluice/240s.mp4" poster="assets/videos/horizons/farmland_sluice/poster.jpg" aria-label="Farmland sluice — 4 minutes"></video><figcaption>4 minutes</figcaption></figure>
+        </div>
+          </div>
+          <div data-gallery-panel="dust_storm_road">
+            <h3>Dust storm</h3>
+            <div class="media-grid" style="--columns: 3">
+          <figure><video controls muted playsinline preload="none" src="assets/videos/horizons/dust_storm_road/60s.mp4" poster="assets/videos/horizons/dust_storm_road/poster.jpg" aria-label="Dust storm — 1 minute"></video><figcaption>1 minute</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/horizons/dust_storm_road/120s.mp4" poster="assets/videos/horizons/dust_storm_road/poster.jpg" aria-label="Dust storm — 2 minutes"></video><figcaption>2 minutes</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/horizons/dust_storm_road/240s.mp4" poster="assets/videos/horizons/dust_storm_road/poster.jpg" aria-label="Dust storm — 4 minutes"></video><figcaption>4 minutes</figcaption></figure>
+        </div>
+          </div>
+          <details>
+            <summary>Inspect seawall stills from 60 to 240 seconds</summary>
+            <div class="media-grid" style="--columns: 4">
+          <figure><img src="assets/images/seawall/ours_t60.png" alt="SceneTether seawall at 60 seconds" width="832" height="480" loading="lazy" decoding="async"><img src="assets/images/seawall/spatial_t60.png" alt="Spatial Echo-Forcing seawall at 60 seconds" width="832" height="480" loading="lazy" decoding="async"><figcaption>60 s</figcaption></figure>
+          <figure><img src="assets/images/seawall/ours_t120.png" alt="SceneTether seawall at 120 seconds" width="832" height="480" loading="lazy" decoding="async"><img src="assets/images/seawall/spatial_t120.png" alt="Spatial Echo-Forcing seawall at 120 seconds" width="832" height="480" loading="lazy" decoding="async"><figcaption>120 s</figcaption></figure>
+          <figure><img src="assets/images/seawall/ours_t180.png" alt="SceneTether seawall at 180 seconds" width="832" height="480" loading="lazy" decoding="async"><img src="assets/images/seawall/spatial_t180.png" alt="Spatial Echo-Forcing seawall at 180 seconds" width="832" height="480" loading="lazy" decoding="async"><figcaption>180 s</figcaption></figure>
+          <figure><img src="assets/images/seawall/ours_t240.png" alt="SceneTether seawall at 240 seconds" width="832" height="480" loading="lazy" decoding="async"><img src="assets/images/seawall/spatial_t240.png" alt="Spatial Echo-Forcing seawall at 240 seconds" width="832" height="480" loading="lazy" decoding="async"><figcaption>240 s</figcaption></figure>
+        </div>
+            <p>SceneTether appears in the upper row of each pair. Spatial Echo-Forcing appears below.</p>
+          </details>
+        </div>
+
+        <div class="result-group">
+          <div class="section-heading">
+            <h2>Articulated motion</h2>
+            <button class="button" type="button" data-play-group hidden>Play together</button>
+          </div>
+          <p class="lead">Exploratory one-minute rollouts on animal scenes beyond the fixed-camera natural-phenomena evaluation.</p>
+          <div class="media-grid" style="--columns: 4">
+          <figure><video controls muted playsinline preload="none" src="assets/videos/oos/blue_tit.mp4" poster="assets/videos/oos/blue_tit.jpg" aria-label="Blue tit — SceneTether"></video><figcaption>Blue tit</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/oos/giant_panda.mp4" poster="assets/videos/oos/giant_panda.jpg" aria-label="Giant panda — SceneTether"></video><figcaption>Giant panda</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/oos/lioness.mp4" poster="assets/videos/oos/lioness.jpg" aria-label="Lioness — SceneTether"></video><figcaption>Lioness</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" src="assets/videos/oos/retriever.mp4" poster="assets/videos/oos/retriever.jpg" aria-label="Retriever — SceneTether"></video><figcaption>Retriever</figcaption></figure>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="citation" aria-labelledby="citation-title">
+      <div class="wrapper">
+        <div class="section-heading">
+          <h2 id="citation-title">BibTeX</h2>
+          <div class="controls">
+            <button type="button" class="button" id="copy-bibtex" hidden>Copy BibTeX</button>
+            <a class="button" href="bibtex.txt" download>Download</a>
+          </div>
+        </div>
+        <pre><code id="bibtex-code">@misc{minar2026scenetether,
+  title         = {SceneTether: Activity-Gated Value Anchoring for Long-Horizon Autoregressive Image Animation},
+  author        = {Matiur Rahman Minar and Seunghun Oh and Ganghyeon Jeong and Unsang Park},
+  year          = {2026},
+}</code></pre>
+        <p class="sr-only" id="copy-status" role="status"></p>
+      </div>
+    </section>
+  </main>
+  <footer class="wrapper footer">
+    <a href="../">Matiur Rahman Minar</a>
+    <p>Project page layout inspired by <a href="https://i2v-dymos.github.io/">DyMoS</a>.</p>
+  </footer>
+</body>
+</html>
+
