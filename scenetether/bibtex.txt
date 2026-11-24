@@ -1,5 +1,11 @@
-@misc{minar2026scenetether,
+@article{minar2026scenetether,
   title         = {SceneTether: Activity-Gated Value Anchoring for Long-Horizon Autoregressive Image Animation},
   author        = {Matiur Rahman Minar and Seunghun Oh and Ganghyeon Jeong and Unsang Park},
+  journal       = {arXiv preprint arXiv:2611.28134},
   year          = {2026},
+  eprint        = {2611.28134},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  doi           = {10.48550/arXiv.2611.28134},
+  url           = {https://arxiv.org/abs/2611.28134}
 }
